@@ -7,8 +7,6 @@ Fizykor is my first application published on Google Play Store. This project was
 * 2016 - Publication
 * 2017 - Major changes in GUI
 * 2018 - Major changes in app architecture 
-## Idea
-I decided to publish Fizykor's code to prove that I have created and published app that gained some popularity in certain topic.
 ## Get the app
 You can download Fizykor from [Google Play Store](https://play.google.com/store/apps/details?id=com.clakestudio.pc.fizykor)
 ### Screenshots
