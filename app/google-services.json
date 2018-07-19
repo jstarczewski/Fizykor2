@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "460413900856",
+    "firebase_url": "https://fizykor-ac84d.firebaseio.com",
+    "project_id": "fizykor-ac84d",
+    "storage_bucket": "fizykor-ac84d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460413900856:android:3230f23365b050f9",
+        "android_client_info": {
+          "package_name": "com.clakestudio.pc.fizykor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "460413900856-rasr6rfooo0u710bu5rsct8lf6i838k9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6f9KD2tIjiq23lo0X6oYZRerkg5xQfpU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/naukadwa"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:fillViewport="true"
+    android:layout_height="match_parent">
+
+   <TableLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:stretchColumns="1">
+
+
+
+       <TextView
+           android:text="Zagadnienia"
+           android:textAlignment="center"
+           android:textSize="40dp"
+           android:layout_marginTop="18dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/textView2"
+           android:textColor="@color/colorPrimaryDark"
+           android:fontFamily="sans-serif-thin" />
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textAlignment="center"
+           android:textSize="15dp"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="@dimen/activity_horizontal_margin"
+           android:layout_marginRight="@dimen/activity_horizontal_margin"
+
+           android:text="@string/zagadnienia_zawarte_w_aplikacji_to_podstawy_teorii_fizyki_na_poziomie_maturalnym_opisane_wzorami_zagadnienienia_teoretyczne_b_d_progresywnie_poszerzane_w_kolejnych_aktualizacjach_aplikacji"/>
+
+       <TextView
+           android:text="@string/fiszki"
+           android:textAlignment="center"
+           android:textSize="40dp"
+           android:layout_marginTop="10dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/textView3"
+           android:textColor="@color/colorPrimaryDark"
+           android:fontFamily="sans-serif-thin"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textAlignment="center"
+           android:textSize="15dp"
+           android:layout_marginTop="8dp"
+           android:layout_marginLeft="@dimen/activity_horizontal_margin"
+           android:layout_marginRight="@dimen/activity_horizontal_margin"
+           android:text="@string/fiszki_to_tryb_stworzony_do_nauki_wzor_w_zawartych_w_zagadnieniach_tryb_fiszek_dla_okre_lonego_rozdzia_u_zawiera_wszystki_wzory_om_wione_w_rozdziale_aby_zmieni_fiszk_nale_y_przesun_c_palcem_po_ekranie_od_lewej_do_prawej_z_prawej_do_lewej_by_cofn_fiszk_aby_wy_wietli_schowa_fiszk_przytrzymaj_palcem_na_ekranie"/>
+
+       <TextView
+           android:text="@string/fiszki_maturalne"
+           android:textAlignment="center"
+           android:textSize="40dp"
+           android:layout_marginTop="10dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/textView4"
+           android:textColor="@color/colorPrimaryDark"
+           android:fontFamily="sans-serif-thin"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textAlignment="center"
+           android:textSize="15dp"
+           android:layout_marginTop="8dp"
+           android:layout_marginLeft="@dimen/activity_horizontal_margin"
+           android:layout_marginRight="@dimen/activity_horizontal_margin"
+           android:text="Tryb Fiszek maturalnych zawiera te wzory, które zostały omówione w rozdziałach, ale nie znajdują się na karcie wzorów CKE podczas egzaminu maturalnego, aby zmienić fiszkę należy przesunąc palcem po ekranie od lewej do prawej, aby wyświetlić/schować fiszkę przytrzymaj palcem na ekranie."/>
+
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="60dp"
+           android:textAlignment="center"
+           android:textSize="15dp"
+           android:layout_marginTop="8dp"
+           android:layout_marginLeft="@dimen/activity_horizontal_margin"
+           android:layout_marginRight="@dimen/activity_horizontal_margin"
+           android:text=""/>
+
+
+   </TableLayout>
+</ScrollView>

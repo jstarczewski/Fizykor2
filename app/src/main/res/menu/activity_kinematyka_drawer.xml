@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/kinematyka"
+                    android:icon="@drawable/ic_label_black_24dp"
+                    android:title="@string/kinematykaDwa" />
+                <item
+                    android:id="@+id/dynamika"
+                    android:icon="@drawable/ic_label_black_24dp"
+                    android:title="@string/dynamikaDWA" />
+                <item
+                    android:id="@+id/pracaMocEnergia"
+                    android:icon="@drawable/ic_label_black_24dp"
+                    android:title="@string/praca_moc_energiaDWA" />
+                <item
+                    android:id="@+id/bryla"
+                    android:icon="@drawable/ic_label_black_24dp"
+                    android:title="@string/bry_a_szytywnaDWA" />
+                <item
+                    android:id="@+id/termodynamika"
+                    android:icon="@drawable/ic_label_black_24dp"
+                    android:title="@string/termodynamikaDWA" />
+                <item
+                    android:id="@+id/grawitacja"
+                    android:icon="@drawable/ic_label_black_24dp"
+                    android:title="@string/grawitacja_kosmosDWA" />
+                <item
+                    android:id="@+id/drgajacy"
+                    android:icon="@drawable/ic_label_black_24dp"
+                    android:title="@string/ruch_drgaj_cyDWA" />
+                <item
+                    android:id="@+id/mechaniczne"
+                    android:icon="@drawable/ic_label_black_24dp"
+                    android:title="@string/fale_mechaniczneDWA" />
+                <item
+                    android:id="@+id/Elektorstatyka"
+                    android:icon="@drawable/ic_label_black_24dp"
+                    android:title="@string/elektrostatykaDWA"/>
+                <item
+                    android:id="@+id/pradstatly"
+                    android:icon="@drawable/ic_label_black_24dp"
+                    android:title="@string/pr_d_sta_yDWA"/>
+                <item
+                    android:id="@+id/magnetyzm"
+                    android:icon="@drawable/ic_label_black_24dp"
+                    android:title="@string/magnetyzmDWA"/>
+                <item
+                    android:id="@+id/IndukcjaElektro"
+                    android:icon="@drawable/ic_label_black_24dp"
+                    android:title="@string/indukcja_elektromagnetycznaDWA"/>
+                <item
+                    android:id="@+id/przemienny"
+                    android:icon="@drawable/ic_label_black_24dp"
+                    android:title="@string/pr_d_przemienny_i_obwodyDWA"/>
+                <item
+                    android:id="@+id/optyka"
+                    android:icon="@drawable/ic_label_black_24dp"
+                    android:title="@string/optykaDWA"/>
+                <item
+                    android:id="@+id/wspolczesna"
+                    android:icon="@drawable/ic_label_black_24dp"
+                    android:title="@string/fizyka_wsp_czesnaDWA"/>
+             </group>
+
+     <item android:title="@string/sta_e_i_przedrostki">
+
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                    android:id="@+id/stale"
+                    android:icon="@drawable/ic_keyboard_arrow_right_blue_800_24dp"
+                    android:title="@string/sta_e_fizyczne"/>
+                    <item
+                    android:id="@+id/przedrostki"
+                    android:icon="@drawable/ic_keyboard_arrow_right_blue_800_24dp"
+                    android:title="@string/przedrostki"/>
+                </group>
+            </menu>
+
+
+    </item>
+    <item android:title="@string/dodatkowo">
+
+        <menu>
+
+                <item
+                    android:id="@+id/onas"
+                    android:icon="@drawable/ic_keyboard_arrow_right_blue_800_24dp"
+                    android:title="@string/informacje"/>
+
+        </menu>
+
+
+    </item>
+
+
+</menu>
