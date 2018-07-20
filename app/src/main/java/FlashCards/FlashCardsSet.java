@@ -22,7 +22,7 @@ public class FlashCardsSet {
         return flashCardHashMap.get(key);
     }
     public FlashCard getRandomFlashCard() {
-        return flashCardHashMap.get(random.nextInt(maxKey+1));
+        return flashCardHashMap.get(random.nextInt(maxKey));
     }
 
 }

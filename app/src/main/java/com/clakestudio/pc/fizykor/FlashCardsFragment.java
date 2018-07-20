@@ -26,8 +26,8 @@ import FlashCards.FlashCardsSet;
 public class FlashCardsFragment extends Fragment {
 
 
-    Random jan = new Random();
 
+    private WebView webViewFiszki;
 
     Context context;
     int liczba;
@@ -36,7 +36,6 @@ public class FlashCardsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_flash_cards, container, false);
-
         context = container.getContext();
 
         return view;
@@ -51,14 +50,11 @@ public class FlashCardsFragment extends Fragment {
     public void onStart () {
         super.onStart();
 
-        FlashCardsFormatter flashCardsFormatter = FlashCardsReader.readPlainFlashCards("dynamika_mat.txt", getActivity());
-        FlashCardsSet flashCardsSet = flashCardsFormatter.getFormattedFlashCardsSet("\\s@\\s");
-        FlashCard flashCard = flashCardsSet.getRandomFlashCard();
-
-        String Fiszka = "";
+        FlashCardsActivity flashCardsActivity = (FlashCardsActivity)getActivity();
+        FlashCard flashCard = flashCardsActivity.getRandomFlashCard();
         TextView textViewDwa = (TextView)getView().findViewById(R.id.textView7);
         textViewDwa.setText(flashCard.getName());
-        WebView webViewFiszki = (WebView)getView().findViewById(R.id.webView563);
+        webViewFiszki = (WebView)getView().findViewById(R.id.webView563);
         WebSettings webSettings2 = webViewFiszki.getSettings();
         int dpi = getResources().getDisplayMetrics().densityDpi;
         if (liczba == 2) {
@@ -92,7 +88,12 @@ public class FlashCardsFragment extends Fragment {
         webViewFiszki.loadDataWithBaseURL("file:///android_asset/", fiszka, "text/html", "UTF-8", null);
 
     }
-
+    public void showWebView() {
+        if (webViewFiszki.getVisibility()==View.VISIBLE)
+            webViewFiszki.setVisibility(View.INVISIBLE);
+        else
+            webViewFiszki.setVisibility(View.VISIBLE);
+    }
 
 
 }
