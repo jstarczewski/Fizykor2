@@ -270,7 +270,7 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
             startActivity(FiszkiDynamo);
 
         } else if (sprawdzenieMat == 123) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
+            Intent FiszkiDynamo = new Intent(this, FlashCardsActivity   .class);
             FiszkiDynamo.putExtra("liczba", 22);
             materialDesignFAM.close(true);
             startActivity(FiszkiDynamo);

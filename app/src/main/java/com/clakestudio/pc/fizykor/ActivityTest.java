@@ -92,7 +92,6 @@ public class ActivityTest extends AppCompatActivity implements GestureDetector.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_przyklad);
-        MobileAds.initialize(getApplicationContext(), "ca-app-pub-8124828420072466/9435660038");
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         myToolbar.setTitle("Fiszki Kinematyka");

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.clakestudio.pc.fizykor">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -11,26 +12,25 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".SplashActivity"
-            android:theme="@style/SplashTheme"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
             <intent-filter>
-
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.clakestudio.pc.fizykor.KinematykaActivity"
+            android:name=".KinematykaActivity"
             android:configChanges="orientation"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".ActivityTest"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".InfoActivity"/>
-        <activity android:name=".NaukaActivity"/>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ActivityTest"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".InfoActivity" />
+        <activity android:name=".NaukaActivity" />
+        <activity android:name=".FlashCardsActivity"></activity>
     </application>
-
 
 </manifest>
