@@ -9,6 +9,9 @@ import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.TextView;
@@ -54,10 +57,9 @@ public class FlashCardsFragment extends Fragment {
         *
         * */
 
-        
-
         FlashCardsActivity flashCardsActivity = (FlashCardsActivity)getActivity();
         FlashCard flashCard = flashCardsActivity.getFlashCard();
+
         TextView textViewDwa = (TextView)getView().findViewById(R.id.textView7);
         textViewDwa.setText(flashCard.getName());
         webViewFiszki = (WebView)getView().findViewById(R.id.webView563);
