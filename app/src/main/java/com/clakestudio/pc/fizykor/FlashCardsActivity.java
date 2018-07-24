@@ -7,9 +7,12 @@ import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.widget.Toast;
+
+import java.util.Stack;
 
 import FlashCards.FlashCard;
 import FlashCards.FlashCardsFormatter;
@@ -27,6 +30,8 @@ public class FlashCardsActivity extends AppCompatActivity implements GestureDete
     static final int MIN_DISTANCE = 150;
     static final int MIN_DISTANCE_MINUS = -150;
     static final String STATE_LEVEL = "sprawdzenie";
+    private Stack<FlashCard> flashCardsStack;
+    private boolean isFlingedReversedDirection = false;
 
     private GestureDetectorCompat gestureDetector;
     FlashCardsSet flashCardsSet;
@@ -39,8 +44,10 @@ public class FlashCardsActivity extends AppCompatActivity implements GestureDete
         gestureDetector = new GestureDetectorCompat(this, this);
         gestureDetector.setOnDoubleTapListener(this);
 
+        flashCardsStack = new Stack<>();
+
         String flashCardsTitle = getIntent().getStringExtra("flashCards");
-        if (flashCardsTitle==null)
+        if (flashCardsTitle == null)
             flashCardsTitle = "dynamika-mat.txt";
 
         FlashCardsFormatter flashCardsFormatter = FlashCardsReader.readPlainFlashCards(flashCardsTitle, this);
@@ -59,8 +66,24 @@ public class FlashCardsActivity extends AppCompatActivity implements GestureDete
 
     }
 
-    public FlashCard getRandomFlashCard() {
-        return flashCardsSet.getRandomFlashCard();
+    public FlashCard getFlashCard() {
+        if (isFlingedReversedDirection) {
+
+            Log.e("New", "pop");
+            if (!flashCardsStack.isEmpty())
+                return flashCardsStack.pop();
+            else
+                return getRandomFlashCard();
+        } else {
+            Log.e("New", "new");
+            return getRandomFlashCard();
+        }
+    }
+
+    private FlashCard getRandomFlashCard() {
+        FlashCard flashCard = flashCardsSet.getRandomFlashCard();
+        flashCardsStack.push(flashCard);
+        return flashCard;
     }
 
     @Override
@@ -113,15 +136,14 @@ public class FlashCardsActivity extends AppCompatActivity implements GestureDete
 
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
         if (motionEvent.getX() < motionEvent1.getX() && delta > MIN_DISTANCE) {
-            fragmentTransaction.setCustomAnimations(R.animator.slide_in_up, R.animator.slide_out_up);
+            isFlingedReversedDirection = false;
 
         } else if (motionEvent.getX() > motionEvent1.getX() && abs(delta) > MIN_DISTANCE) {
+            isFlingedReversedDirection = true;
 
         }
+        flashCardsFragment.onStart();
 
-        fragmentTransaction.detach(flashCardsFragment);
-        fragmentTransaction.attach(flashCardsFragment);
-        fragmentTransaction.commit();
         return true;
     }
 

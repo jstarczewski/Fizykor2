@@ -1,4 +1,4 @@
-package com.clakestudio.pc.fizykor;
+package FlashCards;
 
 import android.support.annotation.NonNull;
 

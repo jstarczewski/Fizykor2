@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,12 +13,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.TextView;
 
-import java.util.Random;
-
 import FlashCards.FlashCard;
-import FlashCards.FlashCardsFormatter;
-import FlashCards.FlashCardsReader;
-import FlashCards.FlashCardsSet;
 
 /**
  * Created by Jan on 7/20/2018.
@@ -28,6 +24,7 @@ public class FlashCardsFragment extends Fragment {
 
 
     private WebView webViewFiszki;
+    private CardView cvFlashCards;
 
     Context context;
     int liczba;
@@ -38,23 +35,35 @@ public class FlashCardsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_flash_cards, container, false);
         context = container.getContext();
 
+        cvFlashCards = (CardView)view.findViewById(R.id.cvFlashCards);
         return view;
     }
-    public void widzialnosc() {
-        final WebView webViewFiszki = (WebView) getView().findViewById(R.id.webView563);
-        if (webViewFiszki.getVisibility() == View.INVISIBLE) {
-            webViewFiszki.setVisibility(View.VISIBLE);
-        }
+    public void setDefaultWebViewVisibility() {
+        webViewFiszki.setVisibility(View.INVISIBLE);
     }
+
 
     public void onStart () {
         super.onStart();
 
+
+        /*
+        *
+        *  Animate Card View
+        *
+        *
+        * */
+
+        
+
         FlashCardsActivity flashCardsActivity = (FlashCardsActivity)getActivity();
-        FlashCard flashCard = flashCardsActivity.getRandomFlashCard();
+        FlashCard flashCard = flashCardsActivity.getFlashCard();
         TextView textViewDwa = (TextView)getView().findViewById(R.id.textView7);
         textViewDwa.setText(flashCard.getName());
         webViewFiszki = (WebView)getView().findViewById(R.id.webView563);
+
+        setDefaultWebViewVisibility();
+
         WebSettings webSettings2 = webViewFiszki.getSettings();
         int dpi = getResources().getDisplayMetrics().densityDpi;
         if (liczba == 2) {
