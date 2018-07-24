@@ -23,7 +23,7 @@
         <activity
             android:name=".KinematykaActivity"
             android:configChanges="orientation"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ActivityTest"
             android:screenOrientation="portrait"
