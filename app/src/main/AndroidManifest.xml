@@ -30,7 +30,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".InfoActivity" />
         <activity android:name=".NaukaActivity" />
-        <activity android:name=".FlashCardsActivity"></activity>
+        <activity android:name=".FlashCardsActivity"
+            android:theme="@style/FlashCardsStyle"/>
     </application>
 
 </manifest>

@@ -39,7 +39,11 @@ public class FlashCardsActivity extends AppCompatActivity implements GestureDete
         gestureDetector = new GestureDetectorCompat(this, this);
         gestureDetector.setOnDoubleTapListener(this);
 
-        FlashCardsFormatter flashCardsFormatter = FlashCardsReader.readPlainFlashCards("dynamika_mat.txt", this);
+        String flashCardsTitle = getIntent().getStringExtra("flashCards");
+        if (flashCardsTitle==null)
+            flashCardsTitle = "dynamika-mat.txt";
+
+        FlashCardsFormatter flashCardsFormatter = FlashCardsReader.readPlainFlashCards(flashCardsTitle, this);
         flashCardsSet = flashCardsFormatter.getFormattedFlashCardsSet("\\s@\\s");
 
 

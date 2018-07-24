@@ -344,7 +344,8 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
 
 
         if (sprawdzenie == 101) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
+            Intent FiszkiDynamo = new Intent(this, FlashCardsActivity.class);
+            FiszkiDynamo.putExtra("flashCards", "kinematyka.txt");
             FiszkiDynamo.putExtra("liczba", 0);
             startActivity(FiszkiDynamo);
 
