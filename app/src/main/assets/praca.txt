@@ -1,0 +1,9 @@
+Praca @ '$W=∫F↖{→}dr↖{→}$'
+Praca z wykorzystaniem wektorów @ '$W=Frcosα$'
+Moc @ '$P=W/t$'
+Energia Kinetyczn @ '$E_k={mv^2}/2$'
+Energia Potencjalna @ '$E_p=mgh$, $R_z>>h$'
+Energia Potencjalna sprężystości @ '$E_{ps}={k*x^2}/2$'
+Zasada zachowania energii @ 'W izolowanym układzie, całkowita energia mechaniczna nie zmienia się.'
+Moc ciała poruszającego się ze stałą prędkością @ '$P=Fv$'
+
