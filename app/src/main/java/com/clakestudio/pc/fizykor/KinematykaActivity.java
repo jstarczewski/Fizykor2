@@ -34,17 +34,39 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 
+import java.util.ArrayList;
 import java.util.Random;
+
+import FlashCards.FlashCard;
 
 import static android.view.View.GONE;
 
 public class KinematykaActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    ScrollView scrollView;
-    int sprawdzenie = 100;
-    int sprawdzenieMat = 120;
-    int backpress;
-    static final String STATE_LEVEL = "sprawdzenie";
+    private ScrollView scrollView;
+    private int sprawdzenie = 0;
+    private int sprawdzenieMat = 0;
+    private int backpress;
+    private static final String STATE_LEVEL = "sprawdzenie";
+    private TextView[] textViews;
+    private CardView[] cardViews;
+    private WebView[] webViews;
+    TextView textView11;
+    TextView textView12;
+    TextView textView13;
+    TextView textView14;
+    TextView textView15;
+    TextView textView16;
+    TextView textView17;
+    TextView textView18;
+    TextView textView19;
+    TextView textView20;
+    TextView textView21;
+    TextView textView22;
+    TextView textView23;
+    TextView textView24;
+    TextView textView25;
+    TextView textView26;
 
 
     FloatingActionMenu materialDesignFAM;
@@ -59,13 +81,10 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
         toolbar.setTitleTextColor(Color.parseColor("#FFFFFF"));
 
 
-
-
         materialDesignFAM = (FloatingActionMenu) findViewById(R.id.material_design_android_floating_action_menu);
         floatingActionButton1 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_item1);
         floatingActionButton2 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_item2);
         floatingActionButton3 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_item3);
-
 
 
         floatingActionButton1.setOnClickListener(new View.OnClickListener() {
@@ -102,385 +121,6 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.kinematyka);
-
-
-
-        if (savedInstanceState != null) {
-            // Restore value of members from saved state
-            android.support.v7.app.ActionBar menu = getSupportActionBar();
-            sprawdzenie = savedInstanceState.getInt(STATE_LEVEL);
-            if (sprawdzenie == 101) {
-                menu.setTitle(R.string.kinematyka);
-                onNavigationItemSelected(navigationView.getMenu().findItem(R.id.kinematyka));
-            } else if (sprawdzenie == 102) {
-                menu.setTitle(R.string.dynamika);
-                onNavigationItemSelected(navigationView.getMenu().findItem(R.id.dynamika));
-            } else if (sprawdzenie == 103) {
-                menu.setTitle(R.string.praca_moc_energia);
-                onNavigationItemSelected(navigationView.getMenu().findItem(R.id.pracaMocEnergia));
-            } else if (sprawdzenie == 104) {
-                menu.setTitle(R.string.bry_a_sztywna);
-                onNavigationItemSelected(navigationView.getMenu().findItem(R.id.bryla));
-            } else if (sprawdzenie == 105) {
-                menu.setTitle(R.string.termodynamika);
-                onNavigationItemSelected(navigationView.getMenu().findItem(R.id.termodynamika));
-            } else if (sprawdzenie == 106) {
-                menu.setTitle(R.string.grawitacja_i_kosmos);
-                onNavigationItemSelected(navigationView.getMenu().findItem(R.id.grawitacja));
-            } else if (sprawdzenie == 107) {
-                menu.setTitle(R.string.ruch_drgaj_cy);
-                onNavigationItemSelected(navigationView.getMenu().findItem(R.id.drgajacy));
-            } else if (sprawdzenie == 108) {
-                menu.setTitle(R.string.fale_mechaniczne);
-                onNavigationItemSelected(navigationView.getMenu().findItem(R.id.mechaniczne));
-            } else if (sprawdzenie == 109) {
-                menu.setTitle(R.string.elektrostatyka);
-                onNavigationItemSelected(navigationView.getMenu().findItem(R.id.Elektorstatyka));
-            } else if (sprawdzenie == 110) {
-                menu.setTitle(R.string.pr_d_sta_y);
-                onNavigationItemSelected(navigationView.getMenu().findItem(R.id.pradstatly));
-            } else if (sprawdzenie == 111) {
-                menu.setTitle(R.string.magnetyzm);
-                onNavigationItemSelected(navigationView.getMenu().findItem(R.id.magnetyzm));
-            } else if (sprawdzenie == 112) {
-                menu.setTitle(R.string.indukcja_elektromagnetyczna);
-                onNavigationItemSelected(navigationView.getMenu().findItem(R.id.IndukcjaElektro));
-            } else if (sprawdzenie == 113) {
-                menu.setTitle(R.string.pr_d_przemienny_i_obwody);
-                onNavigationItemSelected(navigationView.getMenu().findItem(R.id.przemienny));
-            } else if (sprawdzenie == 114) {
-                menu.setTitle(R.string.optyka);
-                onNavigationItemSelected(navigationView.getMenu().findItem(R.id.optyka));
-            } else if (sprawdzenie == 115) {
-                menu.setTitle(R.string.fizyka_wsp_czesna);
-                onNavigationItemSelected(navigationView.getMenu().findItem(R.id.wspolczesna));
-            } else if (sprawdzenie == 100) {
-                menu.setTitle(R.string.kinematyka);
-                onNavigationItemSelected(navigationView.getMenu().findItem(R.id.kinematyka));
-            } else if (sprawdzenie == 116) {
-                menu.setTitle(R.string.sta_e_fizyczne);
-                onNavigationItemSelected(navigationView.getMenu().findItem(R.id.stale));
-            } else if (sprawdzenie == 117) {
-                menu.setTitle(R.string.przedrostki);
-                onNavigationItemSelected(navigationView.getMenu().findItem(R.id.przedrostki));
-            }
-
-        } else {
-            // Probably initialize members with default values for a new instance
-        }
-
-
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
-        // Save the user's current game state
-        savedInstanceState.putInt(STATE_LEVEL, sprawdzenie);
-
-        // Always call the superclass so it can save the view hierarchy state
-        super.onSaveInstanceState(savedInstanceState);
-    }
-
-    public void onStart() {
-        super.onStart();
-        backpress = 0;
-
-        android.support.v7.app.ActionBar menu = getSupportActionBar();
-        menu.setTitle(R.string.kinematyka);
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        if (sprawdzenie == 101) {
-            menu.setTitle(R.string.kinematyka);
-            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.kinematyka));
-        } else if (sprawdzenie == 102) {
-            menu.setTitle(R.string.dynamika);
-            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.dynamika));
-        } else if (sprawdzenie == 103) {
-            menu.setTitle(R.string.praca_moc_energia);
-            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.pracaMocEnergia));
-        } else if (sprawdzenie == 104) {
-            menu.setTitle(R.string.bry_a_sztywna);
-            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.bryla));
-        } else if (sprawdzenie == 105) {
-            menu.setTitle(R.string.termodynamika);
-            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.termodynamika));
-        } else if (sprawdzenie == 106) {
-            menu.setTitle(R.string.grawitacja_i_kosmos);
-            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.grawitacja));
-        } else if (sprawdzenie == 107) {
-            menu.setTitle(R.string.ruch_drgaj_cy);
-            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.drgajacy));
-        } else if (sprawdzenie == 108) {
-            menu.setTitle(R.string.fale_mechaniczne);
-            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.mechaniczne));
-        } else if (sprawdzenie == 109) {
-            menu.setTitle(R.string.elektrostatyka);
-            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.Elektorstatyka));
-        } else if (sprawdzenie == 110) {
-            menu.setTitle(R.string.pr_d_sta_y);
-            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.pradstatly));
-        } else if (sprawdzenie == 111) {
-            menu.setTitle(R.string.magnetyzm);
-            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.magnetyzm));
-        } else if (sprawdzenie == 112) {
-            menu.setTitle(R.string.indukcja_elektromagnetyczna);
-            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.IndukcjaElektro));
-        } else if (sprawdzenie == 113) {
-            menu.setTitle(R.string.pr_d_przemienny_i_obwody);
-            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.przemienny));
-        } else if (sprawdzenie == 114) {
-            menu.setTitle(R.string.optyka);
-            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.optyka));
-        } else if (sprawdzenie == 115) {
-            menu.setTitle(R.string.fizyka_wsp_czesna);
-            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.wspolczesna));
-        } else if (sprawdzenie == 100) {
-            menu.setTitle(R.string.kinematyka);
-            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.kinematyka));
-        } else if (sprawdzenie == 116) {
-            menu.setTitle(R.string.sta_e_fizyczne);
-            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.stale));
-        } else if (sprawdzenie == 117) {
-            menu.setTitle(R.string.przedrostki);
-            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.przedrostki));
-        }
-
-    }
-
-
-    public void Info() {
-        Intent infoActivity = new Intent(this, InfoActivity.class);
-        startActivity(infoActivity);
-    }
-
-    public void FiszkiMaturalne() {
-
-
-        if (sprawdzenieMat == 121) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 20);
-            materialDesignFAM.setClosedOnTouchOutside(true);
-            startActivity(FiszkiDynamo);
-
-
-        } else if (sprawdzenieMat == 122) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 21);
-            materialDesignFAM.close(true);
-            startActivity(FiszkiDynamo);
-
-        } else if (sprawdzenieMat == 123) {
-            Intent FiszkiDynamo = new Intent(this, FlashCardsActivity   .class);
-            FiszkiDynamo.putExtra("liczba", 22);
-            materialDesignFAM.close(true);
-            startActivity(FiszkiDynamo);
-
-        } else if (sprawdzenieMat == 124) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 23);
-            materialDesignFAM.close(true);
-            startActivity(FiszkiDynamo);
-        } else if (sprawdzenieMat == 125) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 24);
-            materialDesignFAM.close(true);
-            startActivity(FiszkiDynamo);
-        } else if (sprawdzenieMat == 126) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 25);
-            materialDesignFAM.close(true);
-            startActivity(FiszkiDynamo);
-        } else if (sprawdzenieMat == 127) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 26);
-            materialDesignFAM.close(true);
-            startActivity(FiszkiDynamo);
-        } else if (sprawdzenieMat == 128) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 27);
-            materialDesignFAM.close(true);
-            startActivity(FiszkiDynamo);
-        } else if (sprawdzenieMat == 129) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 28);
-            materialDesignFAM.close(true);
-            startActivity(FiszkiDynamo);
-        } else if (sprawdzenieMat == 130) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 29);
-            materialDesignFAM.close(true);
-            startActivity(FiszkiDynamo);
-        } else if (sprawdzenieMat == 131) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 30);
-            materialDesignFAM.close(true);
-            startActivity(FiszkiDynamo);
-        } else if (sprawdzenieMat == 132) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 31);
-            materialDesignFAM.close(true);
-            startActivity(FiszkiDynamo);
-        } else if (sprawdzenieMat == 133) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 32);
-            materialDesignFAM.close(true);
-            startActivity(FiszkiDynamo);
-        } else if (sprawdzenieMat == 134) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 33);
-            materialDesignFAM.setClosedOnTouchOutside(true);
-            startActivity(FiszkiDynamo);
-        } else if (sprawdzenieMat == 135) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 34);
-            materialDesignFAM.close(true);
-            startActivity(FiszkiDynamo);
-        }
-
-
-    }
-
-    public void Fiszki() {
-
-
-        if (sprawdzenie == 101) {
-            Intent FiszkiDynamo = new Intent(this, FlashCardsActivity.class);
-            FiszkiDynamo.putExtra("flashCards", "kinematyka.txt");
-            FiszkiDynamo.putExtra("liczba", 0);
-            startActivity(FiszkiDynamo);
-
-
-        } else if (sprawdzenie == 102) {
-
-            Intent FiszkiDynamo = new Intent(this, FlashCardsActivity.class);
-            FiszkiDynamo.putExtra("flashCards", "dynamika.txt");
-            startActivity(FiszkiDynamo);
-
-        } else if (sprawdzenie == 103) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 2);
-            startActivity(FiszkiDynamo);
-
-        } else if (sprawdzenie == 104) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 3);
-            startActivity(FiszkiDynamo);
-        } else if (sprawdzenie == 105) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 4);
-            startActivity(FiszkiDynamo);
-        } else if (sprawdzenie == 106) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 5);
-            startActivity(FiszkiDynamo);
-        } else if (sprawdzenie == 107) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 6);
-            startActivity(FiszkiDynamo);
-        } else if (sprawdzenie == 108) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 7);
-            startActivity(FiszkiDynamo);
-        } else if (sprawdzenie == 109) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 8);
-            startActivity(FiszkiDynamo);
-        } else if (sprawdzenie == 110) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 9);
-            startActivity(FiszkiDynamo);
-        } else if (sprawdzenie == 111) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 10);
-            startActivity(FiszkiDynamo);
-        } else if (sprawdzenie == 112) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 11);
-            startActivity(FiszkiDynamo);
-        } else if (sprawdzenie == 113) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 12);
-            startActivity(FiszkiDynamo);
-        } else if (sprawdzenie == 114) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 13);
-            startActivity(FiszkiDynamo);
-        } else if (sprawdzenie == 115) {
-            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
-            FiszkiDynamo.putExtra("liczba", 14);
-            startActivity(FiszkiDynamo);
-        }
-
-
-
-    }
-
-    public void Nauka() {
-        Intent Nauka = new Intent(this, NaukaActivity.class);
-        overridePendingTransition(R.animator.animationenter, R.animator.animationleave);
-        startActivity(Nauka);
-    }
-
-    @Override
-    public void onBackPressed() {
-
-        backpress++;
-
-        Context context = getApplicationContext();
-        int duration = Toast.LENGTH_SHORT;
-        CharSequence sequence = "Wciśnij jeszcze raz, aby wyjść";
-        Toast toast = Toast.makeText(context, sequence, duration);
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-
-            if (backpress>1){
-            super.onBackPressed();}
-            else {toast.show();}
-        }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.kinematyka, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-
-
-            Info();
-
-
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-
-        android.support.v7.app.ActionBar menu = getSupportActionBar();
-        scrollView = (ScrollView)findViewById(R.id.scroll_view);
-        int id = item.getItemId();
-
-        scrollView.fullScroll(ScrollView.FOCUS_UP);
-        String empty = "file:///android_asset/empty.html";
 
 
         WebView webView1 = (WebView) findViewById(R.id.webView1);
@@ -553,216 +193,288 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
             webView15.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
             webView16.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         }
-        CardView card1 = (CardView)findViewById(R.id.card1);
-        CardView card2 = (CardView)findViewById(R.id.card2);
-        CardView card3 = (CardView)findViewById(R.id.card3);
-        CardView card4 = (CardView)findViewById(R.id.card4);
-        CardView card5 = (CardView)findViewById(R.id.card5);
-        CardView card6 = (CardView)findViewById(R.id.card6);
-        CardView card7 = (CardView)findViewById(R.id.card7);
-        CardView card8 = (CardView)findViewById(R.id.card8);
-        CardView card9 = (CardView)findViewById(R.id.card9);
-        CardView card10 = (CardView)findViewById(R.id.card10);
-        CardView card11 = (CardView)findViewById(R.id.card11);
-        CardView card12 = (CardView)findViewById(R.id.card12);
-        CardView card13 = (CardView)findViewById(R.id.card13);
-        CardView card14 = (CardView)findViewById(R.id.card14);
-        CardView card15 = (CardView)findViewById(R.id.card15);
-        CardView card16 = (CardView)findViewById(R.id.card16);
+        CardView card1 = (CardView) findViewById(R.id.card1);
+        CardView card2 = (CardView) findViewById(R.id.card2);
+        CardView card3 = (CardView) findViewById(R.id.card3);
+        CardView card4 = (CardView) findViewById(R.id.card4);
+        CardView card5 = (CardView) findViewById(R.id.card5);
+        CardView card6 = (CardView) findViewById(R.id.card6);
+        CardView card7 = (CardView) findViewById(R.id.card7);
+        CardView card8 = (CardView) findViewById(R.id.card8);
+        CardView card9 = (CardView) findViewById(R.id.card9);
+        CardView card10 = (CardView) findViewById(R.id.card10);
+        CardView card11 = (CardView) findViewById(R.id.card11);
+        CardView card12 = (CardView) findViewById(R.id.card12);
+        CardView card13 = (CardView) findViewById(R.id.card13);
+        CardView card14 = (CardView) findViewById(R.id.card14);
+        CardView card15 = (CardView) findViewById(R.id.card15);
+        CardView card16 = (CardView) findViewById(R.id.card16);
 
 
+        textView11 = (TextView) findViewById(R.id.textView11);
+        textView12 = (TextView) findViewById(R.id.textView12);
+        textView13 = (TextView) findViewById(R.id.textView13);
+        textView14 = (TextView) findViewById(R.id.textView14);
+        textView15 = (TextView) findViewById(R.id.textView15);
+        textView16 = (TextView) findViewById(R.id.textView16);
+        textView17 = (TextView) findViewById(R.id.textView17);
+        textView18 = (TextView) findViewById(R.id.textView18);
+        textView19 = (TextView) findViewById(R.id.textView19);
+        textView20 = (TextView) findViewById(R.id.textView20);
+        textView21 = (TextView) findViewById(R.id.textView21);
+        textView22 = (TextView) findViewById(R.id.textView22);
+        textView23 = (TextView) findViewById(R.id.textView23);
+        textView24 = (TextView) findViewById(R.id.textView24);
+        textView25 = (TextView) findViewById(R.id.textView25);
+        textView26 = (TextView) findViewById(R.id.textView26);
+
+        textViews = new TextView[]{textView11, textView12, textView13, textView14, textView15, textView16, textView17, textView18, textView19, textView20, textView21, textView22, textView23, textView24, textView25, textView26};
+        webViews = new WebView[]{webView1, webView2, webView3, webView4, webView5, webView6, webView7, webView8, webView9, webView10, webView11, webView12, webView13, webView14, webView15, webView16};
+        cardViews = new CardView[]{card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12, card13, card14, card15, card16};
+    }
 
 
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        // Save the user's current game state
+        savedInstanceState.putInt(STATE_LEVEL, sprawdzenie);
 
-        TextView textView11 = (TextView) findViewById(R.id.textView11);
-        TextView textView12 = (TextView) findViewById(R.id.textView12);
-        TextView textView13 = (TextView) findViewById(R.id.textView13);
-        TextView textView14 = (TextView) findViewById(R.id.textView14);
-        TextView textView15 = (TextView) findViewById(R.id.textView15);
-        TextView textView16 = (TextView) findViewById(R.id.textView16);
-        TextView textView17 = (TextView) findViewById(R.id.textView17);
-        TextView textView18 = (TextView) findViewById(R.id.textView18);
-        TextView textView19 = (TextView) findViewById(R.id.textView19);
-        TextView textView20 = (TextView) findViewById(R.id.textView20);
-        TextView textView21 = (TextView) findViewById(R.id.textView21);
-        TextView textView22 = (TextView) findViewById(R.id.textView22);
-        TextView textView23 = (TextView) findViewById(R.id.textView23);
-        TextView textView24 = (TextView) findViewById(R.id.textView24);
-        TextView textView25 = (TextView) findViewById(R.id.textView25);
-        TextView textView26 = (TextView) findViewById(R.id.textView26);
+        // Always call the superclass so it can save the view hierarchy state
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    public void onStart() {
+        super.onStart();
+        backpress = 0;
+
+        android.support.v7.app.ActionBar menu = getSupportActionBar();
+        menu.setTitle(R.string.kinematyka);
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        if (sprawdzenie == 101) {
+        } else if (sprawdzenie == 102) {
+            menu.setTitle(R.string.dynamika);
+            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.dynamika));
+        } else if (sprawdzenie == 103) {
+            menu.setTitle(R.string.praca_moc_energia);
+            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.pracaMocEnergia));
+        } else if (sprawdzenie == 104) {
+            menu.setTitle(R.string.bry_a_sztywna);
+            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.bryla));
+        } else if (sprawdzenie == 105) {
+            menu.setTitle(R.string.termodynamika);
+            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.termodynamika));
+        } else if (sprawdzenie == 106) {
+            menu.setTitle(R.string.grawitacja_i_kosmos);
+            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.grawitacja));
+        } else if (sprawdzenie == 107) {
+            menu.setTitle(R.string.ruch_drgaj_cy);
+            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.drgajacy));
+        } else if (sprawdzenie == 108) {
+            menu.setTitle(R.string.fale_mechaniczne);
+            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.mechaniczne));
+        } else if (sprawdzenie == 109) {
+            menu.setTitle(R.string.elektrostatyka);
+            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.Elektorstatyka));
+        } else if (sprawdzenie == 110) {
+            menu.setTitle(R.string.pr_d_sta_y);
+            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.pradstatly));
+        } else if (sprawdzenie == 111) {
+            menu.setTitle(R.string.magnetyzm);
+            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.magnetyzm));
+        } else if (sprawdzenie == 112) {
+            menu.setTitle(R.string.indukcja_elektromagnetyczna);
+            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.IndukcjaElektro));
+        } else if (sprawdzenie == 113) {
+            menu.setTitle(R.string.pr_d_przemienny_i_obwody);
+            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.przemienny));
+        } else if (sprawdzenie == 114) {
+            menu.setTitle(R.string.optyka);
+            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.optyka));
+        } else if (sprawdzenie == 115) {
+            menu.setTitle(R.string.fizyka_wsp_czesna);
+            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.wspolczesna));
+        } else if (sprawdzenie == 100) {
+            menu.setTitle(R.string.kinematyka);
+            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.kinematyka));
+        } else if (sprawdzenie == 116) {
+            menu.setTitle(R.string.sta_e_fizyczne);
+            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.stale));
+        } else if (sprawdzenie == 117) {
+            menu.setTitle(R.string.przedrostki);
+            onNavigationItemSelected(navigationView.getMenu().findItem(R.id.przedrostki));
+        }
+
+    }
+
+
+    public void Info() {
+        Intent infoActivity = new Intent(this, InfoActivity.class);
+        startActivity(infoActivity);
+    }
+
+    public void FiszkiMaturalne() {
+
+
+        if (sprawdzenieMat == 0) {
+            Intent FiszkiDynamo = new Intent(this, FlashCardsActivity.class);
+            FiszkiDynamo.putExtra("liczba", 20);
+            materialDesignFAM.setClosedOnTouchOutside(true);
+            startActivity(FiszkiDynamo);
+
+
+        } else if (sprawdzenieMat == 2) {
+            Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
+            FiszkiDynamo.putExtra("liczba", 21);
+            materialDesignFAM.close(true);
+            startActivity(FiszkiDynamo);
+
+        } else if (sprawdzenieMat == 3) {
+            Intent FiszkiDynamo = new Intent(this, FlashCardsActivity.class);
+            FiszkiDynamo.putExtra("liczba", 22);
+            materialDesignFAM.close(true);
+            startActivity(FiszkiDynamo);
+        }
+/*
+           Intent FiszkiDynamo = new Intent(this, ActivityTest.class);
+            FiszkiDynamo.putExtra("liczba", 34);
+            materialDesignFAM.close(true);
+            startActivity(FiszkiDynamo);
+        }
+*/
+
+    }
+
+    public void Fiszki() {
+
+
+        Intent FiszkiDynamo = new Intent(this, FlashCardsActivity.class);
+        if (sprawdzenie == 0) {
+            FiszkiDynamo.putExtra("flashCards", "kinematyka.txt");
+            FiszkiDynamo.putExtra("liczba", 0);
+
+        } else if (sprawdzenie == 1) {
+            FiszkiDynamo.putExtra("flashCards", "dynamika.txt");
+            FiszkiDynamo.putExtra("liczba", 1);
+        } else if (sprawdzenie == 2) {
+
+        }
+        startActivity(FiszkiDynamo);
+
+    }
+
+    public void Nauka() {
+        Intent Nauka = new Intent(this, NaukaActivity.class);
+        overridePendingTransition(R.animator.animationenter, R.animator.animationleave);
+        startActivity(Nauka);
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        backpress++;
+
+        Context context = getApplicationContext();
+        int duration = Toast.LENGTH_SHORT;
+        CharSequence sequence = "Wciśnij jeszcze raz, aby wyjść";
+        Toast toast = Toast.makeText(context, sequence, duration);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+
+            if (backpress > 1) {
+                super.onBackPressed();
+            } else {
+                toast.show();
+            }
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.kinematyka, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+
+
+            Info();
+
+
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+
+        android.support.v7.app.ActionBar menu = getSupportActionBar();
+        scrollView = (ScrollView) findViewById(R.id.scroll_view);
+        int id = item.getItemId();
+
+        scrollView.fullScroll(ScrollView.FOCUS_UP);
+        String empty = "file:///android_asset/empty.html";
 
 
         if (id == R.id.kinematyka) {
-
-
             scrollView.fullScroll(ScrollView.FOCUS_UP);
-
-            sprawdzenieMat = 121;
-            sprawdzenie = 101;
-
-
-
-            card1 .setVisibility(View.VISIBLE);
-                    card2.setVisibility(View.VISIBLE);
-            card3.setVisibility(View.VISIBLE);
-                    card4.setVisibility(View.VISIBLE);
-            card5.setVisibility(View.VISIBLE);
-                    card6.setVisibility(View.VISIBLE);
-            card7.setVisibility(View.VISIBLE);
-                    card8.setVisibility(View.VISIBLE);
-            card9.setVisibility(View.VISIBLE);
-                    card10.setVisibility(View.VISIBLE);
-            card11.setVisibility(View.GONE);
-                    card12.setVisibility(View.GONE);
-            card13.setVisibility(View.GONE);
-                    card14.setVisibility(View.GONE);
-            card15.setVisibility(View.GONE);
-                    card16.setVisibility(View.GONE);
-
-
-
-            textView11.setVisibility(View.VISIBLE);
-            textView12.setVisibility(View.VISIBLE);
-            textView13.setVisibility(View.VISIBLE);
-            textView14.setVisibility(View.VISIBLE);
-            textView15.setVisibility(View.VISIBLE);
-            textView16.setVisibility(View.VISIBLE);
-            textView17.setVisibility(View.VISIBLE);
-            textView18.setVisibility(View.VISIBLE);
-            textView19.setVisibility(View.VISIBLE);
-            textView20.setVisibility(View.VISIBLE);
-            textView21.setVisibility(GONE);
-            textView22.setVisibility(GONE);
-            textView23.setVisibility(GONE);
-            textView24.setVisibility(GONE);
-            textView25.setVisibility(GONE);
-            textView26.setVisibility(GONE);
-
-            webView1.setVisibility(View.VISIBLE);
-            webView2.setVisibility(View.VISIBLE);
-            webView3.setVisibility(View.VISIBLE);
-            webView4.setVisibility(View.VISIBLE);
-            webView5.setVisibility(View.VISIBLE);
-            webView6.setVisibility(View.VISIBLE);
-            webView7.setVisibility(View.VISIBLE);
-            webView8.setVisibility(View.VISIBLE);
-            webView9.setVisibility(View.VISIBLE);
-            webView10.setVisibility(View.VISIBLE);
-            webView11.setVisibility(GONE);
-            webView12.setVisibility(GONE);
-            webView13.setVisibility(GONE);
-            webView14.setVisibility(GONE);
-            webView15.setVisibility(GONE);
-            webView16.setVisibility(GONE);
-
-            textView11.setText(R.string.ruch_jednostajny);
-            textView12.setText(R.string.ruch_jednostajnie_zmienny);
-            textView13.setText(R.string.droga_w_ruchu_jednostajnie_zmiennym);
-            textView14.setText(R.string.r_wnania_ruchu);
-            textView15.setText(R.string.spadek_swobodny);
-            textView16.setText(R.string.rzut_poziomy);
-            textView17.setText(R.string.rzut_uko_ny);
-            textView18.setText(R.string.ruch_po_okr_gu);
-            textView19.setText(R.string.przy_pieszenie_do_rodkowe);
-            textView20.setText(R.string.pr_dko_rednia);
-
-
-
-
-            String path = "file:///android_asset/";
-            String js = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$v↖{→}={∆s}/t [m/s]$ <br> $v↖{→}$ prędkość, $∆s$ przemieszczenie/przebyta droga, $t$ czas ';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String ls = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$v↖{→}=v_0+at [m/s]$ , $a↖{→}={∆v}/t [m/s^2]$ <br> $v↖{→}$ prędkość, $v_0$ prędkość początkowa, $a↖{→}$ przyśpieszenie, $t$ czas, dla $a↖{→}>0$ ruch jednostajnie przyśpieszony, dla $a↖{→}<0$ ruch jednostajnie opóźniony ';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String xs = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$s = v_0t +↙{-} {at^2}/2$ $[m]$,   $s = {v_0 + v_k}/2 t$,   $s = {v_k^2-v_0^2}/{2a}$ <br> $s$ droga , $a↖{→}$ przyśpieszenie, $t$ czas, $v_k$ prędkość końcowa, $v_0$ prędkość początkowa <br> $s_1:s_2:s_3 ..s_n = 1:3:5..n$ <br> Drogi przebyte przez ciało w ruchu jednostajnie przyśpieszonym bez prędkości początkowej mają się do siebie jak kolejne liczby nieparzyste.';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String vd = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$v↖{→}(t)=v_0+↙{-}at$ $[m/s]$ <br> $v(t)$ prędkość od czasu, $a↖{→}$ przyśpieszenie, $t$ czas <br> $x(t)=x_0+s$ $[m]$ <br> $x(t)$ położenie od czasu, $x_0$ położenie początkowe, w miejsce $s$ wstawiamy wzór na drogę w zależności od ruchu jakim porusza się rozpatrywane ciało ';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String vj = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = 'Przy spadku swobodnym, w pionie, bez oporów ruchu $a↖{→}=g↖{→}$, $v↖{→}_0 = 0$. Spadek swobodny jest ruchem jednostajnie przyśpieszonym, Dla rzutu pionowego $h(t)=x_0+↙{-}v_0↖{→}t+↙{-}{g↖{→}t^2}/2$, gdzie $g$ to przyśpiesznie ziemskie.';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String vk = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$Z=v↖{→}_ot$ ,  $v↖{→}_{ky}=g↖{→}t$,  $tgα={v_y}/{v_x}={g_t}/v_o$,   $v↖{→}_c=√{v↖{→}_x^2+v↖{→}_y^2}$ <br> $Z$ zasięg, $v↖{→}_{ky}$ prędkość końcowa pionowej składowej wekotra prędkości całkowitej, $tgα$ tangens kąta pod jakim ciało uderzy w ziemię, $v↖{→}_c$ prędkość całkowita, która zawsze jest styczna do toru, $v↖{→}_x$ pozioma składowa wektora prędkośi całkowitej, $v↖{→}_y$ pionowa składowa wektora prędkości całkowitej ';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String vz = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$v↖{→}_{0y}=v_0sinα$, $v↖{→}_{0x}=v_0cosα$, $t_{wz}={v↖{→}_0sinα}/g↖{→}$, $t_{cal}={2v_0sinα}/g$, $h_{max}={v_0^2sin^2α}/{2g}$, $Z={v_0^2sin2α}/g$ <br> $α$ kąt pod jakim ciało jest nachylone do osi O:X, $v↖{→}_0$, $v_0$ prędkość początkowa, $v↖{→}_{0x}$  prędkość początkowa poziomej skłądowej prędkości, $v↖{→}_{0y}$  prędkość początkowa pionowej składowej prędkości, $t_{wz}$ czas wznoszenia, $t_{cal}$ czas całkowity, $h_{max}$ maksymalna wysokość na jaką wzniesie się ciało. Czas wznoszenia jest równy czasowi spadania ciała.';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String vc = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$v↖{→}= s/t= {2πr}/T = {2πrf}$, $f=1/T$ <br> $v↖{→}$ prędkość ciała w ruchu po okręgu, $f$ czestotliwość, $r$ promień okręgu, $T$ okres, czas jednego pełnego ruchu, ';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String vb = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = 'Szybkość średnia to stosunek całkowitej drogi przebytej podczasu ruchu do całkowitego czasu trwania tego ruchu.';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String dosrodkowe = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$a_d↖{→}=v^2/r$ $[m/s^2]$ <br> $a_d↖{→}$ przyśpieszenie dośrodkowe, $r$ promień, $v$ prędkość';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-
-
-
-
-            webView1.loadDataWithBaseURL("file:///android_asset/", js, "text/html", "UTF-8", null);
-            webView2.loadDataWithBaseURL("file:///android_asset/", ls, "text/html", "UTF-8", null);
-            webView3.loadDataWithBaseURL("file:///android_asset/", xs, "text/html", "UTF-8", null);
-            webView4.loadDataWithBaseURL("file:///android_asset/", vd, "text/html", "UTF-8", null);
-            webView5.loadDataWithBaseURL("file:///android_asset/", vj, "text/html", "UTF-8", null);
-            webView6.loadDataWithBaseURL("file:///android_asset/", vk, "text/html", "UTF-8", null);
-            webView7.loadDataWithBaseURL("file:///android_asset/", vz, "text/html", "UTF-8", null);
-            webView8.loadDataWithBaseURL("file:///android_asset/", vc, "text/html", "UTF-8", null);
-            webView9.loadDataWithBaseURL("file:///android_asset/", dosrodkowe, "text/html", "UTF-8", null);
-            webView10.loadDataWithBaseURL("file:///android_asset/", vb, "text/html", "UTF-8", null);
-
-
-
-
-
+            sprawdzenieMat = 1;
+            sprawdzenie = 1;
+            setViewsVisibility(10);
+            int[] titles = {R.string.ruch_jednostajny,
+                    R.string.ruch_jednostajnie_zmienny,
+                    R.string.droga_w_ruchu_jednostajnie_zmiennym,
+                    R.string.r_wnania_ruchu,
+                    R.string.spadek_swobodny,
+                    R.string.rzut_poziomy,
+                    R.string.rzut_uko_ny,
+                    R.string.ruch_po_okr_gu,
+                    R.string.przy_pieszenie_do_rodkowe,
+                    R.string.pr_dko_rednia
+            };
+            fillTextViews(titles);
+            ArrayList<String> rawEquations = new ArrayList<>();
+            rawEquations.add(" '$v↖{→}={∆s}/t [m/s]$ <br> $v↖{→}$ prędkość, $∆s$ przemieszczenie/przebyta droga, $t$ czas '");
+            rawEquations.add("'$v↖{→}=v_0+at [m/s]$ , $a↖{→}={∆v}/t [m/s^2]$ <br> $v↖{→}$ prędkość, $v_0$ prędkość początkowa, $a↖{→}$ przyśpieszenie, $t$ czas, dla $a↖{→}>0$ ruch jednostajnie przyśpieszony, dla $a↖{→}<0$ ruch jednostajnie opóźniony '");
+            rawEquations.add("'$s = v_0t +↙{-} {at^2}/2$ $[m]$,   $s = {v_0 + v_k}/2 t$,   $s = {v_k^2-v_0^2}/{2a}$ <br> $s$ droga , $a↖{→}$ przyśpieszenie, $t$ czas, $v_k$ prędkość końcowa, $v_0$ prędkość początkowa <br> $s_1:s_2:s_3 ..s_n = 1:3:5..n$ <br> Drogi przebyte przez ciało w ruchu jednostajnie przyśpieszonym bez prędkości początkowej mają się do siebie jak kolejne liczby nieparzyste.'");
+            rawEquations.add("'$v↖{→}(t)=v_0+↙{-}at$ $[m/s]$ <br> $v(t)$ prędkość od czasu, $a↖{→}$ przyśpieszenie, $t$ czas <br> $x(t)=x_0+s$ $[m]$ <br> $x(t)$ położenie od czasu, $x_0$ położenie początkowe, w miejsce $s$ wstawiamy wzór na drogę w zależności od ruchu jakim porusza się rozpatrywane ciało '");
+            rawEquations.add("'Przy spadku swobodnym, w pionie, bez oporów ruchu $a↖{→}=g↖{→}$, $v↖{→}_0 = 0$. Spadek swobodny jest ruchem jednostajnie przyśpieszonym, Dla rzutu pionowego $h(t)=x_0+↙{-}v_0↖{→}t+↙{-}{g↖{→}t^2}/2$, gdzie $g$ to przyśpiesznie ziemskie.'");
+            rawEquations.add("'$Z=v↖{→}_ot$ ,  $v↖{→}_{ky}=g↖{→}t$,  $tgα={v_y}/{v_x}={g_t}/v_o$,   $v↖{→}_c=√{v↖{→}_x^2+v↖{→}_y^2}$ <br> $Z$ zasięg, $v↖{→}_{ky}$ prędkość końcowa pionowej składowej wekotra prędkości całkowitej, $tgα$ tangens kąta pod jakim ciało uderzy w ziemię, $v↖{→}_c$ prędkość całkowita, która zawsze jest styczna do toru, $v↖{→}_x$ pozioma składowa wektora prędkośi całkowitej, $v↖{→}_y$ pionowa składowa wektora prędkości całkowitej '");
+            rawEquations.add("'$v↖{→}_{0y}=v_0sinα$, $v↖{→}_{0x}=v_0cosα$, $t_{wz}={v↖{→}_0sinα}/g↖{→}$, $t_{cal}={2v_0sinα}/g$, $h_{max}={v_0^2sin^2α}/{2g}$, $Z={v_0^2sin2α}/g$ <br> $α$ kąt pod jakim ciało jest nachylone do osi O:X, $v↖{→}_0$, $v_0$ prędkość początkowa, $v↖{→}_{0x}$  prędkość początkowa poziomej skłądowej prędkości, $v↖{→}_{0y}$  prędkość początkowa pionowej składowej prędkości, $t_{wz}$ czas wznoszenia, $t_{cal}$ czas całkowity, $h_{max}$ maksymalna wysokość na jaką wzniesie się ciało. Czas wznoszenia jest równy czasowi spadania ciała.'");
+            rawEquations.add("'$v↖{→}= s/t= {2πr}/T = {2πrf}$, $f=1/T$ <br> $v↖{→}$ prędkość ciała w ruchu po okręgu, $f$ czestotliwość, $r$ promień okręgu, $T$ okres, czas jednego pełnego ruchu, '");
+            rawEquations.add("'Szybkość średnia to stosunek całkowitej drogi przebytej podczasu ruchu do całkowitego czasu trwania tego ruchu.'");
+            rawEquations.add("'$a_d↖{→}=v^2/r$ $[m/s^2]$ <br> $a_d↖{→}$ przyśpieszenie dośrodkowe, $r$ promień, $v$ prędkość'");
+            fillWebViews(generateEquationsInHtmlStrings(rawEquations));
             materialDesignFAM.setVisibility(View.VISIBLE);
             menu.setTitle(R.string.kinematyka);
+        }
 
-
+/*
         } else if (id == R.id.dynamika) {
 
-            sprawdzenieMat = 122;
-            sprawdzenie = 102;
+            sprawdzenieMat = 2;
+            sprawdzenie = 2;
             scrollView.fullScroll(ScrollView.FOCUS_UP);
 
 
-
-            card1 .setVisibility(View.VISIBLE);
+            card1.setVisibility(View.VISIBLE);
             card2.setVisibility(View.VISIBLE);
             card3.setVisibility(View.VISIBLE);
             card4.setVisibility(View.VISIBLE);
@@ -891,10 +603,10 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
             scrollView.fullScroll(ScrollView.FOCUS_UP);
 
 
-            sprawdzenieMat = 123;
-            sprawdzenie = 103;
+            sprawdzenieMat = 3;
+            sprawdzenie = 3;
 
-            card1 .setVisibility(View.VISIBLE);
+            card1.setVisibility(View.VISIBLE);
             card2.setVisibility(View.VISIBLE);
             card3.setVisibility(View.VISIBLE);
             card4.setVisibility(View.VISIBLE);
@@ -1007,10 +719,10 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
 
             scrollView.fullScroll(ScrollView.FOCUS_UP);
 
-            sprawdzenieMat = 124;
-            sprawdzenie = 104;
+            sprawdzenieMat = 4;
+            sprawdzenie = 4;
 
-            card1 .setVisibility(View.VISIBLE);
+            card1.setVisibility(View.VISIBLE);
             card2.setVisibility(View.VISIBLE);
             card3.setVisibility(View.VISIBLE);
             card4.setVisibility(View.VISIBLE);
@@ -1074,7 +786,6 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
             textView19.setText(R.string.dynamiczne_r_wania_ruchu);
             textView20.setText(R.string.moment_p_du);
             textView21.setText(R.string.energia_kinetyczna_ruchu_obrotowego);
-
 
 
             String path = "file:///android_asset/";
@@ -1176,10 +887,10 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
             scrollView.fullScroll(ScrollView.FOCUS_UP);
 
 
-            sprawdzenieMat = 125;
-            sprawdzenie = 105;
+            sprawdzenieMat = 5;
+            sprawdzenie = 5;
 
-            card1 .setVisibility(View.VISIBLE);
+            card1.setVisibility(View.VISIBLE);
             card2.setVisibility(View.VISIBLE);
             card3.setVisibility(View.VISIBLE);
             card4.setVisibility(View.VISIBLE);
@@ -1247,7 +958,6 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
             textView24.setText(R.string.druga_zasada_termodynamiki);
             textView25.setText(R.string.sprawno);
             textView26.setText(R.string.entropia);
-
 
 
             String path = "file:///android_asset/";
@@ -1358,8 +1068,6 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
                     + "<script>var s = '$Q=nCΔT$ <br> $C$ ciepło w zależności od rodzaju przemiany <br> $C_v=Q_v/{n*ΔT}$ <br> Dla czastek 1 atomowych $C_v=3/2R$, a $C_p=5/2R$, dla czastek 2 atomowych $C_v=3/2R$, a $C_p=7/2R$ <br> $Q_v$ ciepło przy stałej objętości, $Q_p$ ciepło przy stałym ciśnieniu, $ΔT$ rożnica temperatur, $n$ liczba moli <br> $C_p$ ciepło molowe przy stałym ciśnieniu, $C_v$ ciepło molowe przy stałej objętości';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
 
 
-
-
             webView1.loadDataWithBaseURL("file:///android_asset/", kelwin, "text/html", "UTF-8", null);
             webView2.loadDataWithBaseURL("file:///android_asset/", cisnienieobj, "text/html", "UTF-8", null);
             webView3.loadDataWithBaseURL("file:///android_asset/", cieploWlasciwe, "text/html", "UTF-8", null);
@@ -1386,13 +1094,11 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
             scrollView.fullScroll(ScrollView.FOCUS_UP);
 
 
-
-            sprawdzenieMat = 126;
-            sprawdzenie = 106;
-
+            sprawdzenieMat = 6;
+            sprawdzenie = 6;
 
 
-            card1 .setVisibility(View.VISIBLE);
+            card1.setVisibility(View.VISIBLE);
             card2.setVisibility(View.VISIBLE);
             card3.setVisibility(View.VISIBLE);
             card4.setVisibility(View.VISIBLE);
@@ -1458,7 +1164,6 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
             textView21.setText(R.string.ca_kowita_energia);
             textView22.setText(R.string.nat_enie_pola_grawitacyjnego_ziemi);
             textView23.setText(R.string.odleglosci);
-
 
 
             String path = "file:///android_asset/";
@@ -1549,7 +1254,6 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
                     + "<script>var s =  'Jedna jednostka astronomiczna oznaczana $au$ to średnia odległość Ziemi od Słońca, w przybliżeniu $1,5*10^11 m$. Jeden rok świetlny to odległość jaką światło o prędkosći $c=3*10^8[m/s]$ przebyłoby w ciagu roku. Rok świetlny w przybliżeniu to $9.46*10^{15}m$. Parsek to odległość, dla której paralaksa roczna położenia Ziemi widzianej prostopadle do płaszczyzny orbity wynosi 1 sekundę łuku, wynosi ok. $3.09*10^{16}m$ ';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
 
 
-
             webView1.loadDataWithBaseURL("file:///android_asset/", keplerjeden, "text/html", "UTF-8", null);
             webView2.loadDataWithBaseURL("file:///android_asset/", keplerdwa, "text/html", "UTF-8", null);
             webView3.loadDataWithBaseURL("file:///android_asset/", keplertrzy, "text/html", "UTF-8", null);
@@ -1574,13 +1278,11 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
             scrollView.fullScroll(ScrollView.FOCUS_UP);
 
 
-            sprawdzenieMat = 127;
-            sprawdzenie = 107;
+            sprawdzenieMat = 7;
+            sprawdzenie = 7;
 
 
-
-
-            card1 .setVisibility(View.VISIBLE);
+            card1.setVisibility(View.VISIBLE);
             card2.setVisibility(View.VISIBLE);
             card3.setVisibility(View.VISIBLE);
             card4.setVisibility(View.VISIBLE);
@@ -1726,12 +1428,11 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
             scrollView.fullScroll(ScrollView.FOCUS_UP);
 
 
-            sprawdzenieMat = 128;
-            sprawdzenie = 108;
+            sprawdzenieMat = 8;
+            sprawdzenie = 8;
 
 
-
-            card1 .setVisibility(View.VISIBLE);
+            card1.setVisibility(View.VISIBLE);
             card2.setVisibility(View.VISIBLE);
             card3.setVisibility(View.VISIBLE);
             card4.setVisibility(View.VISIBLE);
@@ -1880,12 +1581,11 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
         } else if (id == R.id.Elektorstatyka) {
 
             scrollView.fullScroll(ScrollView.FOCUS_UP);
-            sprawdzenieMat = 129;
-            sprawdzenie = 109;
+            sprawdzenieMat = 9;
+            sprawdzenie = 9;
 
 
-
-            card1 .setVisibility(View.VISIBLE);
+            card1.setVisibility(View.VISIBLE);
             card2.setVisibility(View.VISIBLE);
             card3.setVisibility(View.VISIBLE);
             card4.setVisibility(View.VISIBLE);
@@ -2049,10 +1749,10 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
 
             scrollView.fullScroll(ScrollView.FOCUS_UP);
 
-            sprawdzenieMat = 130;
-            sprawdzenie = 110;
+            sprawdzenieMat = 10;
+            sprawdzenie = 10;
 
-            card1 .setVisibility(View.VISIBLE);
+            card1.setVisibility(View.VISIBLE);
             card2.setVisibility(View.VISIBLE);
             card3.setVisibility(View.VISIBLE);
             card4.setVisibility(View.VISIBLE);
@@ -2118,8 +1818,6 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
             textView21.setText(R.string.pierwsze_prawo_kirchoffa);
             textView22.setText(R.string.drugie_prawo_kirchoffa);
             textView23.setText(R.string.pr_d_zwarcia_i_moc_obwodu);
-
-
 
 
             String path = "file:///android_asset/";
@@ -2227,11 +1925,11 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
 
             scrollView.fullScroll(ScrollView.FOCUS_UP);
 
-            sprawdzenieMat = 131;
-            sprawdzenie = 111;
+            sprawdzenieMat = 11;
+            sprawdzenie = 11;
 
 
-            card1 .setVisibility(View.VISIBLE);
+            card1.setVisibility(View.VISIBLE);
             card2.setVisibility(View.VISIBLE);
             card3.setVisibility(View.VISIBLE);
             card4.setVisibility(View.VISIBLE);
@@ -2294,7 +1992,6 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
             textView18.setText(R.string.regu_a_lewej_d_oni);
             textView19.setText(R.string.dodatkowe_informacje);
             textView21.setText(R.string.wzgl_dna_przenikalno_c_magnetyczna);
-
 
 
             String path = "file:///android_asset/";
@@ -2387,11 +2084,11 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
             scrollView.fullScroll(ScrollView.FOCUS_UP);
 
 
-            sprawdzenieMat = 132;
-            sprawdzenie = 112;
+            sprawdzenieMat = 12;
+            sprawdzenie = 12;
 
 
-            card1 .setVisibility(View.VISIBLE);
+            card1.setVisibility(View.VISIBLE);
             card2.setVisibility(View.VISIBLE);
             card3.setVisibility(View.VISIBLE);
             card4.setVisibility(View.VISIBLE);
@@ -2453,7 +2150,6 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
             textView17.setText(R.string.indukcyjno_i_energia_pola_magnetycznego);
             textView18.setText(R.string.samoindukcja);
             textView19.setText(R.string.indukcja_wzajemna);
-
 
 
             String path = "file:///android_asset/";
@@ -2536,11 +2232,11 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
             scrollView.fullScroll(ScrollView.FOCUS_UP);
 
 
-            sprawdzenieMat = 133;
-            sprawdzenie = 113;
+            sprawdzenieMat = 13;
+            sprawdzenie = 13;
 
 
-            card1 .setVisibility(View.VISIBLE);
+            card1.setVisibility(View.VISIBLE);
             card2.setVisibility(View.VISIBLE);
             card3.setVisibility(View.VISIBLE);
             card4.setVisibility(View.VISIBLE);
@@ -2604,9 +2300,6 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
             textView19.setText(R.string.transformator);
             textView20.setText(R.string.obw_d_drgaj_cy_lc);
             textView21.setText(R.string.dioda);
-
-
-
 
 
             String path = "file:///android_asset/";
@@ -2709,11 +2402,11 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
             scrollView.fullScroll(ScrollView.FOCUS_UP);
 
 
-            sprawdzenieMat = 134;
-            sprawdzenie = 114;
+            sprawdzenieMat = 14;
+            sprawdzenie = 14;
 
 
-            card1 .setVisibility(View.VISIBLE);
+            card1.setVisibility(View.VISIBLE);
             card2.setVisibility(View.VISIBLE);
             card3.setVisibility(View.VISIBLE);
             card4.setVisibility(View.VISIBLE);
@@ -2819,7 +2512,6 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
                     + "<script>var s = ' Kąt odbicia jest mniejszy od końca padania gdy: <br> $v_1>v_2$, $λ_1>λ_2$, $n_2>n_1$ <br> Kąt odbicia jest większy od kąta padania gdy: <br> $v_2>v_1$, $λ_2>λ_1$ lub $n_1>n_2$ <br> Podczas przejść swiatła między ośrodkami nie zmienia się jego częstotliwość.';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
 
 
-
             String katgraniczny = "<html><head>"
                     + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
                     + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
@@ -2848,14 +2540,12 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
                     + "<script>var s = 'Gdy promień niespolaryzowanego światła pada na płytkę polaryzacyjną to przepuszczana jest składowa wektora natężenia pola równoległa do kierunku polaryzacji polaryzatora. <br> $I=I_0/2$ <br> Gdy wiązka spolaryzowanego światła pada na kolejną płytkę to natężenie zależy od kąta miedzy kierunkiem polaryzacji swiatla a kier. polaryzacji polaryzatora. <br> $I=I_0{cos^2θ}$.';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
 
 
-
             String siatka = "<html><head>"
                     + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
                     + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
                     + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
                     + "</head><body>"
                     + "<script>var s = 'Światło białe przechodzące przez siątkę dyfrakcyjną ulega rozszczepieniu sie na barwy (światło monochormatyczne nie), powstają prążki w określonych rzędach <br><br> $nλ=d{sin}α$ <br><br> $n$ rząd prążka, $λ$ długośc fali, $d$ stała siatki dyfrakcyjnej ${sin}α_n$ kąt między promieniem rzędu ($P_0$) prostopadłego na ekran, a promieniem padającym na wysokość określonego rzędu, $d$ stała siatki dyfrakcyjnej <br> $d= $ jednostka długości/ilość rys';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
 
 
             webView1.loadDataWithBaseURL("file:///android_asset/", zwiercdialo, "text/html", "UTF-8", null);
@@ -2879,11 +2569,11 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
 
             scrollView.fullScroll(ScrollView.FOCUS_UP);
 
-            sprawdzenieMat = 135;
-            sprawdzenie = 115;
+            sprawdzenieMat = 15;
+            sprawdzenie = 15;
 
 
-            card1 .setVisibility(View.VISIBLE);
+            card1.setVisibility(View.VISIBLE);
             card2.setVisibility(View.VISIBLE);
             card3.setVisibility(View.VISIBLE);
             card4.setVisibility(View.VISIBLE);
@@ -2934,8 +2624,6 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
             webView14.setVisibility(GONE);
             webView15.setVisibility(GONE);
             webView16.setVisibility(GONE);
-
-
 
 
             textView11.setText(R.string.zjawisko_fotoelektryczne_zewn_trzne);
@@ -3012,7 +2700,6 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
                     + "<script>var s = 'Nie można dokonać jednoczesnego pomiaru dwóch wielkości charakteryzujących rozpatrywane ciało z tą samą dokładnością <br> $ΔxΔp≥h/{4π}$ <br> $ΔEΔt≥h/{4π}$ <br> $x$ przemieszczenie, $p$ pęd, $h$ stała Planca, $E$ energia, $t$ czas';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
 
 
-
             webView1.loadDataWithBaseURL("file:///android_asset/", fotoelektrycznezewnetrzne, "text/html", "UTF-8", null);
             webView2.loadDataWithBaseURL("file:///android_asset/", modelbohra, "text/html", "UTF-8", null);
             webView3.loadDataWithBaseURL("file:///android_asset/", energiajonizacji, "text/html", "UTF-8", null);
@@ -3024,8 +2711,6 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
             webView9.loadDataWithBaseURL("file:///android_asset/", zasada, "text/html", "UTF-8", null);
 
 
-
-
             materialDesignFAM.setVisibility(View.VISIBLE);
             menu.setTitle(R.string.fizyka_wsp_czesna);
 
@@ -3033,10 +2718,10 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
 
             scrollView.fullScroll(ScrollView.FOCUS_UP);
 
-            sprawdzenie = 116;
+            sprawdzenie = 16;
 
 
-            card1 .setVisibility(View.VISIBLE);
+            card1.setVisibility(View.VISIBLE);
             card2.setVisibility(View.VISIBLE);
             card3.setVisibility(View.VISIBLE);
             card4.setVisibility(View.VISIBLE);
@@ -3092,7 +2777,6 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
             textView11.setText(R.string.wybrane_sta_e_fizyczne);
 
 
-
             String path = "file:///android_asset/";
             String przyspieszenie = "<html><head>"
                     + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
@@ -3109,15 +2793,12 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
                     + "<script>var s = '4. Liczba Avogadra $N_A=6,02·10^23$$[1/{mol}]$ <br><br>5. Stała grawitacji $G=6,67·10^-11$$[{Nm^2}/kg^2]$ <br><br>6. Objętość mola dla $t=0C$ oraz $p=1013,25{hPa}$, $V=22,41 [{dm}^3/mol]$<br><br> 7. Uniwersalna stała Gazowa $R=8,31$$[J/{mol·K}]$ <br><br>8. Stała Boltzmana $k_B=1,38·10^{-23}$$[J/K]$ <br><br>';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"left\";document.write(s);</script></body>";
 
 
-
             String przyspieszenietrzys = "<html><head>"
                     + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
                     + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
                     + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
                     + "</head><body>"
                     + "<script>var s = '9. Stała elektryczna $k=1/{4π·ε_0}=8,99·10^9$$[{N·m^2}/C^2]$ <br><br>10. Przenikalność magnetyczna próżni $μ_0=4π·10^{-7}$$N/A^2$ <br><br> 11. Prędkość światła $c=3,000·10^8$$[m/s]$ <br><br>12. Stała Planca $h=6,63·10^{-34}$$[J·s]$ <br><br>13. Ładunek elektryczny $e=1,60·10^{-19}$$[C]$ <br><br>14. Masa elektronu $m=9,110·10^{-31}$$[kg]$<br><br>';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"left\";document.write(s);</script></body>";
-
-
 
 
             String przyspieszeniedwa = "<html><head>"
@@ -3134,7 +2815,6 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
             webView4.loadDataWithBaseURL("file:///android_asset/", przyspieszeniedwa, "text/html", "UTF-8", null);
 
 
-
             menu.setTitle(R.string.sta_e_fizyczne);
             materialDesignFAM.close(true);
             materialDesignFAM.setVisibility(GONE);
@@ -3143,9 +2823,9 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
 
             scrollView.fullScroll(ScrollView.FOCUS_UP);
 
-            sprawdzenie = 117;
+            sprawdzenie = 17;
 
-            card1 .setVisibility(View.VISIBLE);
+            card1.setVisibility(View.VISIBLE);
             card2.setVisibility(View.GONE);
             card3.setVisibility(View.GONE);
             card4.setVisibility(View.GONE);
@@ -3219,12 +2899,57 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
         } else if (id == R.id.onas) {
             Info();
         }
-
+*/
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
 
 
         return true;
+    }
+
+
+    private void fillWebViews(ArrayList<String> equations) {
+        for (int i = 0; i < equations.size(); i++) {
+            webViews[i].loadDataWithBaseURL("file:///android_asset/", equations.get(i), "text/html", "UTF-8", null);
+        }
+    }
+
+    private void fillTextViews(int[] titles) {
+        for (int i = 0; i < titles.length; i++) {
+            textViews[i].setText(titles[i]);
+        }
+    }
+
+
+    private void setViewsVisibility(int max) {
+        for (int i = 0; i < 16; i++) {
+            if (i < max) {
+                textViews[i].setVisibility(View.VISIBLE);
+                cardViews[i].setVisibility(View.VISIBLE);
+                webViews[i].setVisibility(View.VISIBLE);
+            } else {
+                textViews[i].setVisibility(View.GONE);
+                cardViews[i].setVisibility(View.GONE);
+                webViews[i].setVisibility(View.GONE);
+
+            }
+        }
+    }
+
+    private ArrayList<String> generateEquationsInHtmlStrings(ArrayList<String> rawEquations) {
+        ArrayList<String> htmlEquations = new ArrayList<>();
+        String path = "file:///android_asset/";
+        for (String rawEquation : rawEquations) {
+
+            String htmlEquation = "<html><head>"
+                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
+                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
+                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
+                    + "</head><body>"
+                    + "<script>var s = " + rawEquation + ";M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
+            htmlEquations.add(htmlEquation);
+        }
+        return htmlEquations;
     }
 
     @Override
