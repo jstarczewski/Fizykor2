@@ -34,6 +34,8 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -51,22 +53,7 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
     private TextView[] textViews;
     private CardView[] cardViews;
     private WebView[] webViews;
-    TextView textView11;
-    TextView textView12;
-    TextView textView13;
-    TextView textView14;
-    TextView textView15;
-    TextView textView16;
-    TextView textView17;
-    TextView textView18;
-    TextView textView19;
-    TextView textView20;
-    TextView textView21;
-    TextView textView22;
-    TextView textView23;
-    TextView textView24;
-    TextView textView25;
-    TextView textView26;
+
 
 
     FloatingActionMenu materialDesignFAM;
@@ -211,22 +198,22 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
         CardView card16 = (CardView) findViewById(R.id.card16);
 
 
-        textView11 = (TextView) findViewById(R.id.textView11);
-        textView12 = (TextView) findViewById(R.id.textView12);
-        textView13 = (TextView) findViewById(R.id.textView13);
-        textView14 = (TextView) findViewById(R.id.textView14);
-        textView15 = (TextView) findViewById(R.id.textView15);
-        textView16 = (TextView) findViewById(R.id.textView16);
-        textView17 = (TextView) findViewById(R.id.textView17);
-        textView18 = (TextView) findViewById(R.id.textView18);
-        textView19 = (TextView) findViewById(R.id.textView19);
-        textView20 = (TextView) findViewById(R.id.textView20);
-        textView21 = (TextView) findViewById(R.id.textView21);
-        textView22 = (TextView) findViewById(R.id.textView22);
-        textView23 = (TextView) findViewById(R.id.textView23);
-        textView24 = (TextView) findViewById(R.id.textView24);
-        textView25 = (TextView) findViewById(R.id.textView25);
-        textView26 = (TextView) findViewById(R.id.textView26);
+        TextView textView11 = (TextView) findViewById(R.id.textView11);
+        TextView textView12 = (TextView) findViewById(R.id.textView12);
+        TextView textView13 = (TextView) findViewById(R.id.textView13);
+        TextView textView14 = (TextView) findViewById(R.id.textView14);
+        TextView textView15 = (TextView) findViewById(R.id.textView15);
+        TextView textView16 = (TextView) findViewById(R.id.textView16);
+        TextView textView17 = (TextView) findViewById(R.id.textView17);
+        TextView textView18 = (TextView) findViewById(R.id.textView18);
+        TextView textView19 = (TextView) findViewById(R.id.textView19);
+        TextView textView20 = (TextView) findViewById(R.id.textView20);
+        TextView textView21 = (TextView) findViewById(R.id.textView21);
+        TextView textView22 = (TextView) findViewById(R.id.textView22);
+        TextView textView23 = (TextView) findViewById(R.id.textView23);
+        TextView textView24 = (TextView) findViewById(R.id.textView24);
+        TextView textView25 = (TextView) findViewById(R.id.textView25);
+        TextView textView26 = (TextView) findViewById(R.id.textView26);
 
         textViews = new TextView[]{textView11, textView12, textView13, textView14, textView15, textView16, textView17, textView18, textView19, textView20, textView21, textView22, textView23, textView24, textView25, textView26};
         webViews = new WebView[]{webView1, webView2, webView3, webView4, webView5, webView6, webView7, webView8, webView9, webView10, webView11, webView12, webView13, webView14, webView15, webView16};
