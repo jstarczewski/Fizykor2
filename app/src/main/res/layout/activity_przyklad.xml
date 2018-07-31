@@ -9,7 +9,7 @@
     android:background="#ffffff"
     android:fitsSystemWindows="true"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
-    tools:context="com.clakestudio.pc.fizykor.KinematykaActivity">
+    tools:context="com.clakestudio.pc.fizykor.MainActivity">
 
 
 

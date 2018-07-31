@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
-    tools:context="com.clakestudio.pc.fizykor.KinematykaActivity">
+    tools:context="com.clakestudio.pc.fizykor.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

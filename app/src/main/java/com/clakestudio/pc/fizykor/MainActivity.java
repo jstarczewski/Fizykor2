@@ -30,7 +30,7 @@ import com.github.clans.fab.FloatingActionButton;
 import java.util.ArrayList;
 
 
-public class KinematykaActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private ScrollView scrollView;
     private int sprawdzenie = 0;

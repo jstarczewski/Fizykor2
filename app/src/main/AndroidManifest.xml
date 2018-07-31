@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".KinematykaActivity"
+            android:name=".MainActivity"
             android:configChanges="orientation"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
