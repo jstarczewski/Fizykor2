@@ -503,164 +503,28 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
             sprawdzenieMat = 4;
             sprawdzenie = 4;
 
-            card1.setVisibility(View.VISIBLE);
-            card2.setVisibility(View.VISIBLE);
-            card3.setVisibility(View.VISIBLE);
-            card4.setVisibility(View.VISIBLE);
-            card5.setVisibility(View.VISIBLE);
-            card6.setVisibility(View.VISIBLE);
-            card7.setVisibility(View.VISIBLE);
-            card8.setVisibility(View.VISIBLE);
-            card9.setVisibility(View.VISIBLE);
-            card10.setVisibility(View.VISIBLE);
-            card11.setVisibility(View.VISIBLE);
-            card12.setVisibility(View.GONE);
-            card13.setVisibility(View.GONE);
-            card14.setVisibility(View.GONE);
-            card15.setVisibility(View.GONE);
-            card16.setVisibility(View.GONE);
 
-            textView11.setVisibility(View.VISIBLE);
-            textView12.setVisibility(View.VISIBLE);
-            textView13.setVisibility(View.VISIBLE);
-            textView14.setVisibility(View.VISIBLE);
-            textView15.setVisibility(View.VISIBLE);
-            textView16.setVisibility(View.VISIBLE);
-            textView17.setVisibility(View.VISIBLE);
-            textView18.setVisibility(View.VISIBLE);
-            textView19.setVisibility(View.VISIBLE);
-            textView20.setVisibility(View.VISIBLE);
-            textView21.setVisibility(View.VISIBLE);
-            textView22.setVisibility(GONE);
-            textView23.setVisibility(GONE);
-            textView24.setVisibility(GONE);
-            textView25.setVisibility(GONE);
-            textView26.setVisibility(GONE);
+            setViewsVisibility(11);
 
-
-            webView1.setVisibility(View.VISIBLE);
-            webView2.setVisibility(View.VISIBLE);
-            webView3.setVisibility(View.VISIBLE);
-            webView4.setVisibility(View.VISIBLE);
-            webView5.setVisibility(View.VISIBLE);
-            webView6.setVisibility(View.VISIBLE);
-            webView7.setVisibility(View.VISIBLE);
-            webView8.setVisibility(View.VISIBLE);
-            webView9.setVisibility(View.VISIBLE);
-            webView10.setVisibility(View.VISIBLE);
-            webView11.setVisibility(View.VISIBLE);
-            webView12.setVisibility(GONE);
-            webView13.setVisibility(GONE);
-            webView14.setVisibility(GONE);
-            webView15.setVisibility(GONE);
-            webView16.setVisibility(GONE);
-
-
-            textView11.setText(R.string.ruch_obrotowy);
-            textView12.setText(R.string.droga_k_towa_w_ruchu_po_okr_gu);
-            textView13.setText(R.string.zale_no_ci_mi_dzy_warto_ciami_liniowymi_a_k_towymi);
-            textView14.setText(R.string.moment_si_y);
-            textView15.setText(R.string.moment_bezw_adno_ci);
-            textView16.setText(R.string.twierdzenie_steinera_i_rodek_masy);
-            textView17.setText(R.string.pierwsza_zasada_dynamiki_ruchu_obrotowego);
-            textView18.setText(R.string.druga_zasada_dynamiki_ruchu_obrotowego);
-            textView19.setText(R.string.dynamiczne_r_wania_ruchu);
-            textView20.setText(R.string.moment_p_du);
-            textView21.setText(R.string.energia_kinetyczna_ruchu_obrotowego);
-
-
-            String path = "file:///android_asset/";
-            String ruchObrotowy = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$ω↖{→}=α/t={2π}/T={2πf}$ $[{rad}/s]$, <br> $a↖{→}_s=εr$, $[{rad}/s^2]$ <br> $a↖{→}_c=√{a↖{→}_s^2+a↖{→}_d^2$, <br> $ε↖{→}={Δω}/{Δt}$ $[{rad}/s^2]$ <br> $ω↖{→}$ szybkość kątowa, $T$ okres (czas jednego pełnego ruchu), $f$ częstotliwość, $t$ czas, $a↖{→}_s$ przyśpieszenie styczne (do okręgu), $r$ promień okręgu, $a↖{→}_c$ przyśpieszenie całkowite, $ε↖{→}$ przyśpieszenie kątowe,';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String ruchObrotowy2 = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$ω↖{→}_k =ω_o+↙{-}εt$, $α=ω↖{→}_0t+↙{-}{εt^2}/2$ $[rad]$, $α={{ω_0+ω_k}/2}t$, $α={ω_k^2-ω_0^2}/2ε$ <br> $α$ droga kątowa wyrażona w radianach $[{rad}]$, $ω↖{→}_o$ szybkość kątowa początkowa, $ω↖{→}_k$ szybkość kątowa końcowa';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String zaleznosciLinKat = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$s=rα$, $v_s↖{→}=rω$, $a_s↖{→}=rε$ <br> $s$ droga, $r$ odległość od osi obrotu, $α$ droga kątowa, $v_s↖{→}$ prędkość styczna, $ω↖{→}$ prędkość kątowa, $a_s↖{→}$ przyśpieszenie styczne, $ε↖{→}$ przyśpieszenie kątowe';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String momentSily = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$M↖{→}=r↖{→}×F↖{→}, $[N*m]$ M↖{→}=rFsinα$ <br> $M↖{→}$ moment siły, $r↖{→}$ wektor przemieszczenia, $F↖{→}$ siła, $α$ kąt zawarty między wektorem przemieszczenia a siły';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-
-            String momentBezwladnosci = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$I=∑↖{n}↙{i=1}mr^2$, $[kg*m^2]$ $I=mr^2$ <br> $I$ moment bezwładności, $∑$ suma, $m$ masa, $r$ promień <br> Momenty bezwładności wybranych brył/przedmiotów: <br> pręt o długości $l$ $I=1/{12}ml^2$ <br> walec $I=1/2mr^2$ <br> krążek $I=1/2mr^2$ <br> cienkościenny pierścień $I=mr^2$ <br> kula $I=2/5mr^2$, $r$ promień';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String twierdzenieSTEI = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$I=I_0+md^2$ <br> $I$ moment bezwladnosci, $I_0$ moment bezwładnośći dla bryły, w której oś obrotu przechodzi przez środek masy, $m$ masa, $d$ odległość od osi obrotu <br> $x_{sr}={∑m_1x_1}/∑m_i$, $r↖{→}=1/M↖{→}{∑m_ir↖{→}_i$ <br> Dla układu wsp. rozpoczynającego się w środku najcięższego ciała, $x_{sr}$ pierwsza współrzędna środka masy, $∑m_ir_i$ suma iloczynów mas i odległości od położenia 0, $∑m_i$ masa punktów całęgo układu, $r↖{→}$ wektor położenia środka, $M↖{→}$ moment siły ';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String zasadaBrylyjeden = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = 'Jeżeli $M↖{→}_w=0$ to w izolowanym układzie bryła pozostaje w spoczynku, lub porusza się ruchem jednostjanym obrotowym. ';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String zasadaObr2 = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$E↖{→}=M↖{→}/I  ⇒ M↖{→}=E↖{→}/I$, $M↖{→}={ΔL↖{→}}/{Δt}$ <br> $M↖{→}$ moment siły, $E↖{→}$ przyśpieszenie kątowe, $I$ moment bezwładności, $ΔL↖{→}$ zmiana momentu pędu, $Δt$ zmiana czasu';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-
-            String rownanieWPR = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = 'Dla krążka o masie $m_k$ przywieszonego do sufitu, mogącego się swobodnie obracać, z przywieszonym bloczkiem na lekkim, nierozciągliwym sznurku o masie m <br> $F_w↖{→}=F_g↖{→}-F_n↖{→}$ <br> $IE↖{→}=M↖{→}$ <br> $ma=mg-F_n$ <br> $IE=rF_n ⇒ 1/2m_k*r^2*a/r=r*F_n$, $a={mg}/{m+1/2m_k}$ <br> $F_w↖{→}$ siła wypadkowa, $F_g↖{→}$ siła grawitacji, $F_n↖{→}$ siła naciągu, $I$ moment bezwładności krążka, $E↖{→}$ przyśpieszenie kątowe, $M↖{→}$ moment siły działający na krążek, $a↖{→}$przyśpieszenie liniowe bloczka, $m$ masa bloczka, $m_k$ masa krążka, $r$ promień krążka';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-
-            String momentPedu = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$L↖{→}=r↖{→}×p↖{→}$, $[kg*m^2]$ $L↖{→}=rmv, L↖{→}=Iω$ <br> $L↖{→}$ moment pedu, $r↖{→}$ promień, $p↖{→}$ pęd, $m$ masa, $v↖{→}$ prędkość, $I$ moment bezwładności, $ω↖{→}$ prędkość katowa <br> Jeżeli $M↖{→}_w=0$ to $L↖{→}={const}↖{→}$';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String energiaKin = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = 'Dla toczącej się kuli $E_k={Iω^2}/2+{mv↖{→}^2}/2$, $[J]$ $v↖{→}=ωr$ <br> $E_k$ energia kinetyczna, $I$ moment bezwładności, $ω↖{→}$ szybkość kątowa, $m$ masa, $v↖{→}$ prędkość, $r$ promień';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            webView1.loadDataWithBaseURL("file:///android_asset/", ruchObrotowy, "text/html", "UTF-8", null);
-            webView2.loadDataWithBaseURL("file:///android_asset/", ruchObrotowy2, "text/html", "UTF-8", null);
-            webView3.loadDataWithBaseURL("file:///android_asset/", zaleznosciLinKat, "text/html", "UTF-8", null);
-            webView4.loadDataWithBaseURL("file:///android_asset/", momentSily, "text/html", "UTF-8", null);
-            webView5.loadDataWithBaseURL("file:///android_asset/", momentBezwladnosci, "text/html", "UTF-8", null);
-            webView6.loadDataWithBaseURL("file:///android_asset/", twierdzenieSTEI, "text/html", "UTF-8", null);
-            webView7.loadDataWithBaseURL("file:///android_asset/", zasadaBrylyjeden, "text/html", "UTF-8", null);
-            webView8.loadDataWithBaseURL("file:///android_asset/", zasadaObr2, "text/html", "UTF-8", null);
-            webView9.loadDataWithBaseURL("file:///android_asset/", rownanieWPR, "text/html", "UTF-8", null);
-            webView10.loadDataWithBaseURL("file:///android_asset/", momentPedu, "text/html", "UTF-8", null);
-            webView11.loadDataWithBaseURL("file:///android_asset/", energiaKin, "text/html", "UTF-8", null);
-
-
+            int[] titles = {R.string.ruch_obrotowy, R.string.droga_k_towa_w_ruchu_po_okr_gu, R.string.zale_no_ci_mi_dzy_warto_ciami_liniowymi_a_k_towymi, R.string.moment_si_y,
+                    R.string.moment_bezw_adno_ci, R.string.twierdzenie_steinera_i_rodek_masy, R.string.pierwsza_zasada_dynamiki_ruchu_obrotowego, R.string.druga_zasada_dynamiki_ruchu_obrotowego,
+                    R.string.dynamiczne_r_wnania_ruchu_obrotowego, R.string.moment_p_du, R.string.energia_kinetyczna_ruchu_obrotowego};
+            ArrayList<String> rawEquations = new ArrayList<>();
+            rawEquations.add("'$ω↖{→}=α/t={2π}/T={2πf}$ $[{rad}/s]$, <br> $a↖{→}_s=εr$, $[{rad}/s^2]$ <br> $a↖{→}_c=√{a↖{→}_s^2+a↖{→}_d^2$, <br> $ε↖{→}={Δω}/{Δt}$ $[{rad}/s^2]$ <br> $ω↖{→}$ szybkość kątowa, $T$ okres (czas jednego pełnego ruchu), $f$ częstotliwość, $t$ czas, $a↖{→}_s$ przyśpieszenie styczne (do okręgu), $r$ promień okręgu, $a↖{→}_c$ przyśpieszenie całkowite, $ε↖{→}$ przyśpieszenie kątowe,'");
+            rawEquations.add("'$ω↖{→}_k =ω_o+↙{-}εt$, $α=ω↖{→}_0t+↙{-}{εt^2}/2$ $[rad]$, $α={{ω_0+ω_k}/2}t$, $α={ω_k^2-ω_0^2}/2ε$ <br> $α$ droga kątowa wyrażona w radianach $[{rad}]$, $ω↖{→}_o$ szybkość kątowa początkowa, $ω↖{→}_k$ szybkość kątowa końcowa'");
+            rawEquations.add("'$s=rα$, $v_s↖{→}=rω$, $a_s↖{→}=rε$ <br> $s$ droga, $r$ odległość od osi obrotu, $α$ droga kątowa, $v_s↖{→}$ prędkość styczna, $ω↖{→}$ prędkość kątowa, $a_s↖{→}$ przyśpieszenie styczne, $ε↖{→}$ przyśpieszenie kątowe'");
+            rawEquations.add("'$M↖{→}=r↖{→}×F↖{→}, $[N*m]$ M↖{→}=rFsinα$ <br> $M↖{→}$ moment siły, $r↖{→}$ wektor przemieszczenia, $F↖{→}$ siła, $α$ kąt zawarty między wektorem przemieszczenia a siły'");
+            rawEquations.add(" '$I=∑↖{n}↙{i=1}mr^2$, $[kg*m^2]$ $I=mr^2$ <br> $I$ moment bezwładności, $∑$ suma, $m$ masa, $r$ promień <br> Momenty bezwładności wybranych brył/przedmiotów: <br> pręt o długości $l$ $I=1/{12}ml^2$ <br> walec $I=1/2mr^2$ <br> krążek $I=1/2mr^2$ <br> cienkościenny pierścień $I=mr^2$ <br> kula $I=2/5mr^2$, $r$ promień'");
+            rawEquations.add(" '$I=I_0+md^2$ <br> $I$ moment bezwladnosci, $I_0$ moment bezwładnośći dla bryły, w której oś obrotu przechodzi przez środek masy, $m$ masa, $d$ odległość od osi obrotu <br> $x_{sr}={∑m_1x_1}/∑m_i$, $r↖{→}=1/M↖{→}{∑m_ir↖{→}_i$ <br> Dla układu wsp. rozpoczynającego się w środku najcięższego ciała, $x_{sr}$ pierwsza współrzędna środka masy, $∑m_ir_i$ suma iloczynów mas i odległości od położenia 0, $∑m_i$ masa punktów całęgo układu, $r↖{→}$ wektor położenia środka, $M↖{→}$ moment siły '");
+            rawEquations.add("'Jeżeli $M↖{→}_w=0$ to w izolowanym układzie bryła pozostaje w spoczynku, lub porusza się ruchem jednostjanym obrotowym. '");
+            rawEquations.add("'$E↖{→}=M↖{→}/I  ⇒ M↖{→}=E↖{→}/I$, $M↖{→}={ΔL↖{→}}/{Δt}$ <br> $M↖{→}$ moment siły, $E↖{→}$ przyśpieszenie kątowe, $I$ moment bezwładności, $ΔL↖{→}$ zmiana momentu pędu, $Δt$ zmiana czasu'");
+            rawEquations.add("'Dla krążka o masie $m_k$ przywieszonego do sufitu, mogącego się swobodnie obracać, z przywieszonym bloczkiem na lekkim, nierozciągliwym sznurku o masie m <br> $F_w↖{→}=F_g↖{→}-F_n↖{→}$ <br> $IE↖{→}=M↖{→}$ <br> $ma=mg-F_n$ <br> $IE=rF_n ⇒ 1/2m_k*r^2*a/r=r*F_n$, $a={mg}/{m+1/2m_k}$ <br> $F_w↖{→}$ siła wypadkowa, $F_g↖{→}$ siła grawitacji, $F_n↖{→}$ siła naciągu, $I$ moment bezwładności krążka, $E↖{→}$ przyśpieszenie kątowe, $M↖{→}$ moment siły działający na krążek, $a↖{→}$przyśpieszenie liniowe bloczka, $m$ masa bloczka, $m_k$ masa krążka, $r$ promień krążka'");
+            rawEquations.add("'$L↖{→}=r↖{→}×p↖{→}$, $[kg*m^2]$ $L↖{→}=rmv, L↖{→}=Iω$ <br> $L↖{→}$ moment pedu, $r↖{→}$ promień, $p↖{→}$ pęd, $m$ masa, $v↖{→}$ prędkość, $I$ moment bezwładności, $ω↖{→}$ prędkość katowa <br> Jeżeli $M↖{→}_w=0$ to $L↖{→}={const}↖{→}$'");
+            rawEquations.add("'Dla toczącej się kuli $E_k={Iω^2}/2+{mv↖{→}^2}/2$, $[J]$ $v↖{→}=ωr$ <br> $E_k$ energia kinetyczna, $I$ moment bezwładności, $ω↖{→}$ szybkość kątowa, $m$ masa, $v↖{→}$ prędkość, $r$ promień'");
+            fillWebViews(generateEquationsInHtmlStrings(rawEquations));
             materialDesignFAM.setVisibility(View.VISIBLE);
             menu.setTitle(R.string.bry_a_sztywna);
+        }
 
 /*
         } else if (id == R.id.termodynamika) {
@@ -2681,12 +2545,12 @@ public class KinematykaActivity extends AppCompatActivity implements NavigationV
             Info();
         }
 */
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-            drawer.closeDrawer(GravityCompat.START);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
 
 
-            return true;
-        }
+        return true;
+    }
 
 
     private void fillWebViews(ArrayList<String> equations) {
