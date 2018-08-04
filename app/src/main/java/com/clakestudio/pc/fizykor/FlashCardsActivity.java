@@ -58,11 +58,9 @@ public class FlashCardsActivity extends AppCompatActivity implements GestureDete
 
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
         fragmentTransaction.add(R.id.fragment, flashCardsFragment);
         fragmentTransaction.commit();
         myToolbar.setTitle("Fiszki | Dynamika");
-
 
     }
 
