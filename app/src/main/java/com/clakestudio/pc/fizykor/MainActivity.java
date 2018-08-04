@@ -267,15 +267,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         Intent FiszkiDynamo = new Intent(this, FlashCardsActivity.class);
-        if (sprawdzenie == 0) {
+        if (sprawdzenie == 1) {
             FiszkiDynamo.putExtra("flashCards", "kinematyka.txt");
             FiszkiDynamo.putExtra("liczba", 0);
-
-        } else if (sprawdzenie == 1) {
+        } else if (sprawdzenie == 2) {
             FiszkiDynamo.putExtra("flashCards", "dynamika.txt");
             FiszkiDynamo.putExtra("liczba", 1);
-        } else if (sprawdzenie == 2) {
-
+        } else if (sprawdzenie == 3) {
+            FiszkiDynamo.putExtra("flashCards", "praca.txt");
+            FiszkiDynamo.putExtra("liczba", 2);
+        }else if (sprawdzenie == 4) {
+            FiszkiDynamo.putExtra("flashCards", "praca.txt");
+            FiszkiDynamo.putExtra("liczba", 2);
+        }else if (sprawdzenie == 5) {
+            FiszkiDynamo.putExtra("flashCards", "grawitacja.txt");
+            FiszkiDynamo.putExtra("liczba", 4);
+        }else if (sprawdzenie == 6) {
+            FiszkiDynamo.putExtra("flashCards", "grawitacja.txt");
+            FiszkiDynamo.putExtra("liczba", 4);
         }
         startActivity(FiszkiDynamo);
 
@@ -361,6 +370,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.bryla) {
             displayData(R.id.bryla);
             menu.setTitle(R.string.bry_a_sztywna);
+        } else if (id == R.id.grawitacja) {
+            displayData(R.id.grawitacja);
+            menu.setTitle(R.string.grawitacja_i_kosmos);
         }
 
 
@@ -791,7 +803,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             materialDesignFAM.setVisibility(View.VISIBLE);
             menu.setTitle(R.string.termodynamika);
 
-
+*/
         } else if (id == R.id.grawitacja) {
             scrollView.fullScroll(ScrollView.FOCUS_UP);
 
@@ -800,58 +812,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             sprawdzenie = 6;
 
 
-            card1.setVisibility(View.VISIBLE);
-            card2.setVisibility(View.VISIBLE);
-            card3.setVisibility(View.VISIBLE);
-            card4.setVisibility(View.VISIBLE);
-            card5.setVisibility(View.VISIBLE);
-            card6.setVisibility(View.VISIBLE);
-            card7.setVisibility(View.VISIBLE);
-            card8.setVisibility(View.VISIBLE);
-            card9.setVisibility(View.VISIBLE);
-            card10.setVisibility(View.VISIBLE);
-            card11.setVisibility(View.VISIBLE);
-            card12.setVisibility(View.VISIBLE);
-            card13.setVisibility(View.VISIBLE);
-            card14.setVisibility(View.GONE);
-            card15.setVisibility(View.GONE);
-            card16.setVisibility(View.GONE);
+            setViewsVisibility(12);
 
-
-            textView11.setVisibility(View.VISIBLE);
-            textView12.setVisibility(View.VISIBLE);
-            textView13.setVisibility(View.VISIBLE);
-            textView14.setVisibility(View.VISIBLE);
-            textView15.setVisibility(View.VISIBLE);
-            textView16.setVisibility(View.VISIBLE);
-            textView17.setVisibility(View.VISIBLE);
-            textView18.setVisibility(View.VISIBLE);
-            textView19.setVisibility(View.VISIBLE);
-            textView20.setVisibility(View.VISIBLE);
-            textView21.setVisibility(View.VISIBLE);
-            textView22.setVisibility(View.VISIBLE);
-            textView23.setVisibility(View.VISIBLE);
-            textView24.setVisibility(GONE);
-            textView25.setVisibility(GONE);
-            textView26.setVisibility(GONE);
-
-
-            webView1.setVisibility(View.VISIBLE);
-            webView2.setVisibility(View.VISIBLE);
-            webView3.setVisibility(View.VISIBLE);
-            webView4.setVisibility(View.VISIBLE);
-            webView5.setVisibility(View.VISIBLE);
-            webView6.setVisibility(View.VISIBLE);
-            webView7.setVisibility(View.VISIBLE);
-            webView8.setVisibility(View.VISIBLE);
-            webView9.setVisibility(View.VISIBLE);
-            webView10.setVisibility(View.VISIBLE);
-            webView11.setVisibility(View.VISIBLE);
-            webView12.setVisibility(View.VISIBLE);
-            webView13.setVisibility(View.VISIBLE);
-            webView14.setVisibility(GONE);
-            webView15.setVisibility(GONE);
-            webView16.setVisibility(GONE);
 
             textView11.setText(R.string.pierwsze_prawo_keplera);
             textView12.setText(R.string.drugie_prawo_keplera);
@@ -974,7 +936,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             materialDesignFAM.setVisibility(View.VISIBLE);
             menu.setTitle(R.string.grawitacja_i_kosmos);
 
-
+/*
         } else if (id == R.id.drgajacy) {
 
             scrollView.fullScroll(ScrollView.FOCUS_UP);
