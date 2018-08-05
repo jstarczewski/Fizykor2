@@ -804,7 +804,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             menu.setTitle(R.string.termodynamika);
 
 */
-        } else if (id == R.id.grawitacja) {
+        else if (id == R.id.grawitacja) {
             scrollView.fullScroll(ScrollView.FOCUS_UP);
 
 
@@ -813,128 +813,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
             setViewsVisibility(12);
-
-
-            textView11.setText(R.string.pierwsze_prawo_keplera);
-            textView12.setText(R.string.drugie_prawo_keplera);
-            textView13.setText(R.string.trzecie_prawo_keplera);
-            textView14.setText(R.string.prawo_powszechnego_ci_enia);
-            textView15.setText(R.string.przy_pieszenie_grawitacyjne);
-            textView16.setText(R.string.nat_enie_pola_grawitacyjnego);
-            textView17.setText(R.string.energia_potencjalna);
-            textView18.setText(R.string.potencja_pola_grawitacyjnego);
-            textView19.setText(R.string.praca_w_polu_grawitacyjnym);
-            textView20.setText(R.string.pr_dko_ci_kosmiczne);
-            textView21.setText(R.string.ca_kowita_energia);
-            textView22.setText(R.string.nat_enie_pola_grawitacyjnego_ziemi);
-            textView23.setText(R.string.odleglosci);
-
-
-            String path = "file:///android_asset/";
-            String keplerjeden = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = 'W układzie słonecznym składającym się ze słońca i powiązanych z nim ciał niebieskich znajduje się osiem planet,w kolejności rosnącej odległości od słońca to: Merkury, Wenus, Ziemia, Mars Jowisz, Saturn, Uran, Neptun. Każda planeta Układu Słonecznego porusza się wokół Słońca po orbicie w kształcie elipsy, w której w jednym z ognisk jest Słońce.';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String keplerdwa = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '${ΔA}/{Δt}={const}↖{→}$ <br> $ΔA$  pole zakreślone przez wektor położenia planety, $Δt$ zmiana czasu';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String keplertrzy = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$T^2/R^3={const}↖{→}$ <br> $T$ okres obiegu planety, $R$ odległośc od słońca ';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String prawoPowszechnegoCiazenia = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$F↖{→}_{M,m}=G{Mm}/r^2$, $G=6,67*10^-11$ $[m^3/{kg*s^2}]$ <br> $F↖{→}_{M,m}$ siła z jaką ciało o masie $M$ działa na ciało o masie $m$, $G$ stała grawitacyjna, $r$ odległość między planetami, $M$ masa pierwszego ciała (np. planety), $m$ masa drugiego ciała (np. satelity) ';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String przyspieszenieGrawitacyjne = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$g↖{→}_2=GMm/{Mr}=Gm/r^2$ $[m/s^2]$ <br> $g↖{→}_2$ przyśpieszenie ciała 2 przyciąganego przez ciało pierwsze, $G$ stała grawitacyjna, $M$ masa ciała pierwszego, $m$ masa ciała drugiego, $r$ promień';M.parseMath(s);document.body.style.color = \"white\";document.body.style.backgroundColor = \"black\";document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String natezeniepola = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$γ↖{→}=F_g↖{→}/m=GM/r^2$ $[N/kg]$ <br> $γ↖{→}$ natężenie pola grawitacyjnego, $F_g$ siła grawitacji działająca na masę próbną $m$, $m$ masa próbna, $G$ stała grawitacji, $M$ masa ciała pierwszego $r$ promień ';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String energiaPotencjalnaGrawi = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$E_p=-G{Mm}/r$ $[J]$ <br> $E_p$ energia potencjalna, $G$ stała grawitacyjna, $M$ masa pierwszego ciała, $m$ masa drugiego ciała, $r$ odległość między ciałami';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String potencjal = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$V=E_p/m_o=-{GM}/r$ $[J/kg]$ <br> $V$ potencjał pola grawitacyjnego, $G$ stała grawitacyjna, $E_p$ energia potencjalna, $M$ masa pierwszego ciała, $m_0$ masa próbna, $r$ odległość między ciałami ';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String pracaGrawi = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$W=∫↖{r_2}↙{r_1}Fdr=GMm(1/r_2-1/r_1)$ $[J]$ <br> $W$ praca, $G$ stała grawitacyjna, $M$ masa pierwszego ciała, $m$ masa drugiego ciała, $r_1$ odległość początkowa, $r_2$ odległość końcowa';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String predkosc = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$v↖{→}_1=√{{GM}/r}$ <br> $v_2↖{→}=√{{2GM}/r}=√2v↖{→}_1$ <br> $v_1↖{→}$ pierwsza prędkośc kosmiczna, $G$ Stała grawitacji, $M$ masa planety, $r$ promień $v↖{→}_2$ druga prędkość kosmiczna';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-
-            String energiaKinetycznaGrawi = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = ' $E_k=-1/2{E_p}=GMm/{2r}$ <br> $E_c=-E_k=1/2{e_p}=-GMm/{2r}$ <br> $E_k$ energia kinetyczna, $E_c$ energia całkowita, $G$ stała grawitacyjna, $M$ masa planety (pierwszego ciała), $m$ masa drugiego ciała $R$ promień';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String natKuli = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$γ↖{→}={GM}/R^3*r$, dla $R>r$, $γ↖{→}={GM}/r^2$, dla $r>>R$, $γ↖{→}$ natężenie, $G$ stała grawitacyjna, $M$ masa ziemi , $R$ promien ziemi, $r$ promien ciała oddalnego od środka ziemi';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String odleglosci = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s =  'Jedna jednostka astronomiczna oznaczana $au$ to średnia odległość Ziemi od Słońca, w przybliżeniu $1,5*10^11 m$. Jeden rok świetlny to odległość jaką światło o prędkosći $c=3*10^8[m/s]$ przebyłoby w ciagu roku. Rok świetlny w przybliżeniu to $9.46*10^{15}m$. Parsek to odległość, dla której paralaksa roczna położenia Ziemi widzianej prostopadle do płaszczyzny orbity wynosi 1 sekundę łuku, wynosi ok. $3.09*10^{16}m$ ';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-
-            webView1.loadDataWithBaseURL("file:///android_asset/", keplerjeden, "text/html", "UTF-8", null);
-            webView2.loadDataWithBaseURL("file:///android_asset/", keplerdwa, "text/html", "UTF-8", null);
-            webView3.loadDataWithBaseURL("file:///android_asset/", keplertrzy, "text/html", "UTF-8", null);
-            webView4.loadDataWithBaseURL("file:///android_asset/", prawoPowszechnegoCiazenia, "text/html", "UTF-8", null);
-            webView5.loadDataWithBaseURL("file:///android_asset/", przyspieszenieGrawitacyjne, "text/html", "UTF-8", null);
-            webView6.loadDataWithBaseURL("file:///android_asset/", natezeniepola, "text/html", "UTF-8", null);
-            webView7.loadDataWithBaseURL("file:///android_asset/", energiaPotencjalnaGrawi, "text/html", "UTF-8", null);
-            webView8.loadDataWithBaseURL("file:///android_asset/", potencjal, "text/html", "UTF-8", null);
-            webView9.loadDataWithBaseURL("file:///android_asset/", pracaGrawi, "text/html", "UTF-8", null);
-            webView10.loadDataWithBaseURL("file:///android_asset/", predkosc, "text/html", "UTF-8", null);
-            webView11.loadDataWithBaseURL("file:///android_asset/", energiaKinetycznaGrawi, "text/html", "UTF-8", null);
-            webView12.loadDataWithBaseURL("file:///android_asset/", natKuli, "text/html", "UTF-8", null);
-            webView13.loadDataWithBaseURL("file:///android_asset/", odleglosci, "text/html", "UTF-8", null);
-
-
+            int[] titles = {R.string.pierwsze_prawo_keplera, R.string.drugie_prawo_keplera, R.string.trzecie_prawo_keplera, R.string.prawo_powszechnego_ci_enia,
+                    R.string.przy_pieszenie_grawitacyjne, R.string.nat_enie_pola_grawitacyjnego, R.string.energia_potencjalna, R.string.potencja_pola_grawitacyjnego,
+                    R.string.praca_w_polu_grawitacyjnym, R.string.pr_dko_ci_kosmiczne, R.string.ca_kowita_energia, R.string.nat_enie_pola_grawitacyjnego_ziemi, R.string.odleglosci};
+            fillTextViews(titles);
+            ArrayList<String> rawEquations = new ArrayList<>();
+            rawEquations.add("'W układzie słonecznym składającym się ze słońca i powiązanych z nim ciał niebieskich znajduje się osiem planet,w kolejności rosnącej odległości od słońca to: Merkury, Wenus, Ziemia, Mars Jowisz, Saturn, Uran, Neptun. Każda planeta Układu Słonecznego porusza się wokół Słońca po orbicie w kształcie elipsy, w której w jednym z ognisk jest Słońce.'");
+            rawEquations.add("'${ΔA}/{Δt}={const}↖{→}$ <br> $ΔA$  pole zakreślone przez wektor położenia planety, $Δt$ zmiana czasu'");
+            rawEquations.add("'$T^2/R^3={const}↖{→}$ <br> $T$ okres obiegu planety, $R$ odległośc od słońca '");
+            rawEquations.add("'$F↖{→}_{M,m}=G{Mm}/r^2$, $G=6,67*10^-11$ $[m^3/{kg*s^2}]$ <br> $F↖{→}_{M,m}$ siła z jaką ciało o masie $M$ działa na ciało o masie $m$, $G$ stała grawitacyjna, $r$ odległość między planetami, $M$ masa pierwszego ciała (np. planety), $m$ masa drugiego ciała (np. satelity) '");
+            rawEquations.add("'$g↖{→}_2=GMm/{Mr}=Gm/r^2$ $[m/s^2]$ <br> $g↖{→}_2$ przyśpieszenie ciała 2 przyciąganego przez ciało pierwsze, $G$ stała grawitacyjna, $M$ masa ciała pierwszego, $m$ masa ciała drugiego, $r$ promień'");
+            rawEquations.add("'$γ↖{→}=F_g↖{→}/m=GM/r^2$ $[N/kg]$ <br> $γ↖{→}$ natężenie pola grawitacyjnego, $F_g$ siła grawitacji działająca na masę próbną $m$, $m$ masa próbna, $G$ stała grawitacji, $M$ masa ciała pierwszego $r$ promień '");
+            rawEquations.add("'$E_p=-G{Mm}/r$ $[J]$ <br> $E_p$ energia potencjalna, $G$ stała grawitacyjna, $M$ masa pierwszego ciała, $m$ masa drugiego ciała, $r$ odległość między ciałami'");
+            rawEquations.add("'$V=E_p/m_o=-{GM}/r$ $[J/kg]$ <br> $V$ potencjał pola grawitacyjnego, $G$ stała grawitacyjna, $E_p$ energia potencjalna, $M$ masa pierwszego ciała, $m_0$ masa próbna, $r$ odległość między ciałami '");
+            rawEquations.add("'$W=∫↖{r_2}↙{r_1}Fdr=GMm(1/r_2-1/r_1)$ $[J]$ <br> $W$ praca, $G$ stała grawitacyjna, $M$ masa pierwszego ciała, $m$ masa drugiego ciała, $r_1$ odległość początkowa, $r_2$ odległość końcowa'");
+            rawEquations.add("'$v↖{→}_1=√{{GM}/r}$ <br> $v_2↖{→}=√{{2GM}/r}=√2v↖{→}_1$ <br> $v_1↖{→}$ pierwsza prędkośc kosmiczna, $G$ Stała grawitacji, $M$ masa planety, $r$ promień $v↖{→}_2$ druga prędkość kosmiczna'");
+            rawEquations.add("' $E_k=-1/2{E_p}=GMm/{2r}$ <br> $E_c=-E_k=1/2{e_p}=-GMm/{2r}$ <br> $E_k$ energia kinetyczna, $E_c$ energia całkowita, $G$ stała grawitacyjna, $M$ masa planety (pierwszego ciała), $m$ masa drugiego ciała $R$ promień'");
+            rawEquations.add("'$γ↖{→}={GM}/R^3*r$, dla $R>r$, $γ↖{→}={GM}/r^2$, dla $r>>R$, $γ↖{→}$ natężenie, $G$ stała grawitacyjna, $M$ masa ziemi , $R$ promien ziemi, $r$ promien ciała oddalnego od środka ziemi'");
+            rawEquations.add(" 'Jedna jednostka astronomiczna oznaczana $au$ to średnia odległość Ziemi od Słońca, w przybliżeniu $1,5*10^11 m$. Jeden rok świetlny to odległość jaką światło o prędkosći $c=3*10^8[m/s]$ przebyłoby w ciagu roku. Rok świetlny w przybliżeniu to $9.46*10^{15}m$. Parsek to odległość, dla której paralaksa roczna położenia Ziemi widzianej prostopadle do płaszczyzny orbity wynosi 1 sekundę łuku, wynosi ok. $3.09*10^{16}m$ '");
+            fillWebViews(generateEquationsInHtmlStrings(rawEquations));
             materialDesignFAM.setVisibility(View.VISIBLE);
-            menu.setTitle(R.string.grawitacja_i_kosmos);
 
 /*
         } else if (id == R.id.drgajacy) {
@@ -2564,5 +2462,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Info();
         }
     }*/
+        }
+
     }
 }
