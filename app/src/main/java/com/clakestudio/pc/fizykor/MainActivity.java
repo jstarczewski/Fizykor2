@@ -593,9 +593,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             rawEquations.add("'Dla toczącej się kuli $E_k={Iω^2}/2+{mv↖{→}^2}/2$, $[J]$ $v↖{→}=ωr$ <br> $E_k$ energia kinetyczna, $I$ moment bezwładności, $ω↖{→}$ szybkość kątowa, $m$ masa, $v↖{→}$ prędkość, $r$ promień'");
             fillWebViews(generateEquationsInHtmlStrings(rawEquations));
             materialDesignFAM.setVisibility(View.VISIBLE);
-        }
 
-/*
+
+
         } else if (id == R.id.termodynamika) {
 
             scrollView.fullScroll(ScrollView.FOCUS_UP);
@@ -603,207 +603,37 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             sprawdzenieMat = 5;
             sprawdzenie = 5;
-
-            card1.setVisibility(View.VISIBLE);
-            card2.setVisibility(View.VISIBLE);
-            card3.setVisibility(View.VISIBLE);
-            card4.setVisibility(View.VISIBLE);
-            card5.setVisibility(View.VISIBLE);
-            card6.setVisibility(View.VISIBLE);
-            card7.setVisibility(View.VISIBLE);
-            card8.setVisibility(View.VISIBLE);
-            card9.setVisibility(View.VISIBLE);
-            card10.setVisibility(View.VISIBLE);
-            card11.setVisibility(View.VISIBLE);
-            card12.setVisibility(View.VISIBLE);
-            card13.setVisibility(View.VISIBLE);
-            card14.setVisibility(View.VISIBLE);
-            card15.setVisibility(View.VISIBLE);
-            card16.setVisibility(View.VISIBLE);
-
-            textView11.setVisibility(View.VISIBLE);
-            textView12.setVisibility(View.VISIBLE);
-            textView13.setVisibility(View.VISIBLE);
-            textView14.setVisibility(View.VISIBLE);
-            textView15.setVisibility(View.VISIBLE);
-            textView16.setVisibility(View.VISIBLE);
-            textView17.setVisibility(View.VISIBLE);
-            textView18.setVisibility(View.VISIBLE);
-            textView19.setVisibility(View.VISIBLE);
-            textView20.setVisibility(View.VISIBLE);
-            textView21.setVisibility(View.VISIBLE);
-            textView22.setVisibility(View.VISIBLE);
-            textView23.setVisibility(View.VISIBLE);
-            textView24.setVisibility(View.VISIBLE);
-            textView25.setVisibility(View.VISIBLE);
-            textView26.setVisibility(View.VISIBLE);
+            setViewsVisibility(16);
 
 
-            webView1.setVisibility(View.VISIBLE);
-            webView2.setVisibility(View.VISIBLE);
-            webView3.setVisibility(View.VISIBLE);
-            webView4.setVisibility(View.VISIBLE);
-            webView5.setVisibility(View.VISIBLE);
-            webView6.setVisibility(View.VISIBLE);
-            webView7.setVisibility(View.VISIBLE);
-            webView8.setVisibility(View.VISIBLE);
-            webView9.setVisibility(View.VISIBLE);
-            webView10.setVisibility(View.VISIBLE);
-            webView11.setVisibility(View.VISIBLE);
-            webView12.setVisibility(View.VISIBLE);
-            webView13.setVisibility(View.VISIBLE);
-            webView14.setVisibility(View.VISIBLE);
-            webView15.setVisibility(View.VISIBLE);
-            webView16.setVisibility(View.VISIBLE);
-
-            textView11.setText(R.string.skala_kelwina);
-            textView12.setText(R.string.ci_nienie_i_obj_to);
-            textView13.setText(R.string.ciep_o_w_a_ciwe);
-            textView14.setText(R.string.cz_steczka);
-            textView15.setText(R.string.r_wnanie_clapeyrona);
-            textView16.setText(R.string.przemiana_izotermiczna_t_const);
-            textView17.setText(R.string.przemina_izobaryczna_p_const);
-            textView18.setText(R.string.przemiana_izohoryczna_v_const);
-            textView19.setText(R.string.przemiana_adiabatyczna_q_const);
-            textView20.setText(R.string.cieplo_przy_obje);
-            textView21.setText(R.string.energia_kinetyczna);
-            textView22.setText(R.string.pierwsza_zasada_termodynamiki);
-            textView23.setText(R.string.praca);
-            textView24.setText(R.string.druga_zasada_termodynamiki);
-            textView25.setText(R.string.sprawno);
-            textView26.setText(R.string.entropia);
 
 
-            String path = "file:///android_asset/";
-            String kelwin = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$0°K=-273,15°C$,$0°C=273,15°K$';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String liczbamoli = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$n={m_s/M}=N/N_a=V/V_{mol}$ <br> $n$ liczba moli, $m_s$ masa substancji $M$ masa molowa, $N$ liczba cząstek gazu, $N_a$ liczba avogadra, $V$ objętość gazu, $V_{mol}$ objętość molowa gazu <br> $N_a=6,022*10^23$';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String clapeyron = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = 'Dla gazu doskonałego (Clapeyron) <br> $pV=nRT$ <br> $pV={NKT}$ <br> Dla gazu rzeczywistego (van der Waals) <br> $(p+a/V_m^2)(V_m-b)=RT$ <br> $p$ ciśnienie $[N/m={Pa}]$, $N$ liczba cząstek gazu, $K$ stała Boltzmana  $V$ objętość $[m^3]$, $a,b$ stałe dla danego gazu, $V_m=V/n$ objętość molowa  $n$ liczba moli, $R$ stała gazowa $R=8,31$ $[J/{{mol}*K}]$, $T$ temperatura $[K]$';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
+            int[] titles = {R.string.skala_kelwina, R.string.ci_nienie_i_obj_to, R.string.ciep_o_w_a_ciwe, R.string.cz_steczka, R.string.r_wnanie_clapeyrona,
+            R.string.przemiana_izotermiczna_t_const, R.string.przemina_izobaryczna_p_const, R.string.przemiana_izohoryczna_v_const, R.string.przemiana_adiabatyczna_q_const,
+            R.string.cieplo_przy_obje, R.string.energia_kinetyczna, R.string.pierwsza_zasada_termodynamiki, R.string.praca, R.string.druga_zasada_termodynamiki, R.string.sprawno, R.string.entropia};
+            fillTextViews(titles);
 
-            String przemianaizotermiczna = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$pV={const}$, $p$ ciśnienie, $V$ objętość <br> Jeżeli podczas przemiany masa gazu nie ulega zmianie to ciśnienie jest odwrotnie proporcjonalne do objętośći.';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String przemianaIzobaryczna = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$V/T=const$, $V$ objętość, $T$ temperatura <br> Dla stałej masy gazu objętość jest wprost proporcjonalna do temperatury.';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String przeminaIzohoryczna = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$p/T=const$, $p$ ciśnienie, $T$ temperatura <br> Dla stałej masy gazu ciśnienie jest wprost proporcjonalne do temperatury.';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String adiabatycznaWprowadzenie = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = 'W przemianie adiabatycznej, nie zachodzi wymiana ciepła z otoczeniem, podczas sprężania wzrasta temperatura i ciśnienie gazu. <br> $pV^χ={const}$, $p_0V_0^χ=p_kV_k^χ$, $χ=C_p/C_v$ <br> $p$ ciśnienie, $V$ objętość, $χ$ współczynnik adiabaty, $C_p$ ciepło molowe przy stałym ciśnieniu, $C_v$ ciepło molowe przy stałej objętości, $p_0$ ciśnienie początkowe, $V_0$ objętość początkowa, $p_k$ ciśnienie końcowe, $V_k$ objętość końcowa';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-
-            String energiaKinetycznaTermo = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$E_{ksr}=i/2KT$, $[J]$ $E_{ksr}$ średnia energia kinetyczna, $K$ stała Boltzmana, $T$ temperatura <br> $i=3$  dla cząsteczek 1 atomowych, $i=5$ dla cząsteczek 2 atomowych, $i=6$ dla cząsteczek 3 i więcej atomowych';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String termoJeden = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$ΔU=Q+W$, $[J]$ $ΔU=nC_vΔT$ <br> $ΔU$ zmiana energii wewnętrznej, $Q$ ciepło, $W$ praca, $ΔT$ zmiana temperatury, $n$ liczba moli, $C_v$ ciepło molowe przy stałej objetosci';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String pracaTermo = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$W=∫_cpdV$ lub $W=-∫_cpdV$, dla przemiany izohorycznej $W=0$ <br> Praca to pole figury pod wykresem ciśnienia od objętości, sprężaniu gazu czyli dodatniej pracy sił zewnęrznych towarzyszy wzrost tempratury, a rozpręzaniu czyli ujemnej pracy sił zewnętrznych spadek temperatury. Jeżeli siły zwenętrzne wykonują ujemną pracę to gaz wykonuje dodatnią. W zamkniętym cyklu termodynamicznym praca zawsze jest dodatnia.';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String drugaZasada = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = 'Niemożliwy jest taki proces termodynamiczny, którego jedynym rezultatem byłoby przekazanie ciepła przez ciało chłodniejsze do ciała cieplejszego. Niemożliwe jest zbudowanie silnika cieplnego, którego sprawność wynosi 100%.';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String entropia = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$S={ΔQ}/T$, $[J/K]$ <br> Dla procesów odwracalnych i nieodwracalnych mozemy zapisać nierówność $S≥{ΔQ}/T$ <br> $S$ entropia czyli miara nieuporządkowania, $ΔQ$ zmiana ciepła, $T$ temperatura, drugą zasadę termodynamiki można zapisać następująco: <br> Całkowita entropia układu nie może maleć.';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String sprawnosc = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$η=W/Q_1={Q_1-Q_2}/Q_1=1-Q_2/Q_1$ <br> Dla silników Carno $η={T_1-T_2}/T_1=1-T_2/T_1$ <br> $η$ sprawność, $W$ praca, $Q_1$ ciepło początkowe, $Q_2$ ciepło końcowe, $T_1$ temperatura początkowa, $T_2$ temperatura końcowa';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String cisnienieobj = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$ρ=m/V$ $[{kg}/m^3]$, $p=F↖{→}_n/s={mg↖{→}}/s$ $[N/m^2=Pa]$ <br> $p_h=ρgh$ <br> $F↖{→}_w=ρ_cgV_{ciala}$ <br> $ρ$ gęstość, $m$ masa $V$ objętość, $p$ ciśnienie, $F↖{→}_n$ siła nacisku, $g↖{→}$ przyśpiesznie grawitacyjne, $Pa$ pascal, $p_h$ ciśnienie hydrostatyczne, $h$ wysokość, $F↖{→}_w$ siła wyporu, $ρ_c$ gęstość cieczy, $V_{ciala}$ objętość zanurzonej częsci ciała';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String cieploWlasciwe = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$C_w=Q/{mΔT}$ $[J/{kg*K}]$ <br> $Q=mC_wΔT$ <br> $C_w$ ciepło właściwe, $Q$ ciepło, Ciepło właściwe ważnych substancji to $C_{wody}=4190$ <br> $[J/{kg*k}]$ $C_{lodu}=2100$  $[J/{kg*k}]$';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String cieploPrzy = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$Q=nCΔT$ <br> $C$ ciepło w zależności od rodzaju przemiany <br> $C_v=Q_v/{n*ΔT}$ <br> Dla czastek 1 atomowych $C_v=3/2R$, a $C_p=5/2R$, dla czastek 2 atomowych $C_v=3/2R$, a $C_p=7/2R$ <br> $Q_v$ ciepło przy stałej objętości, $Q_p$ ciepło przy stałym ciśnieniu, $ΔT$ rożnica temperatur, $n$ liczba moli <br> $C_p$ ciepło molowe przy stałym ciśnieniu, $C_v$ ciepło molowe przy stałej objętości';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-
-            webView1.loadDataWithBaseURL("file:///android_asset/", kelwin, "text/html", "UTF-8", null);
-            webView2.loadDataWithBaseURL("file:///android_asset/", cisnienieobj, "text/html", "UTF-8", null);
-            webView3.loadDataWithBaseURL("file:///android_asset/", cieploWlasciwe, "text/html", "UTF-8", null);
-            webView4.loadDataWithBaseURL("file:///android_asset/", liczbamoli, "text/html", "UTF-8", null);
-            webView5.loadDataWithBaseURL("file:///android_asset/", clapeyron, "text/html", "UTF-8", null);
-            webView6.loadDataWithBaseURL("file:///android_asset/", przemianaizotermiczna, "text/html", "UTF-8", null);
-            webView7.loadDataWithBaseURL("file:///android_asset/", przemianaIzobaryczna, "text/html", "UTF-8", null);
-            webView8.loadDataWithBaseURL("file:///android_asset/", przeminaIzohoryczna, "text/html", "UTF-8", null);
-            webView9.loadDataWithBaseURL("file:///android_asset/", adiabatycznaWprowadzenie, "text/html", "UTF-8", null);
-            webView10.loadDataWithBaseURL("file:///android_asset/", cieploPrzy, "text/html", "UTF-8", null);
-            webView11.loadDataWithBaseURL("file:///android_asset/", energiaKinetycznaTermo, "text/html", "UTF-8", null);
-            webView12.loadDataWithBaseURL("file:///android_asset/", termoJeden, "text/html", "UTF-8", null);
-            webView13.loadDataWithBaseURL("file:///android_asset/", pracaTermo, "text/html", "UTF-8", null);
-            webView14.loadDataWithBaseURL("file:///android_asset/", drugaZasada, "text/html", "UTF-8", null);
-            webView15.loadDataWithBaseURL("file:///android_asset/", sprawnosc, "text/html", "UTF-8", null);
-            webView16.loadDataWithBaseURL("file:///android_asset/", entropia, "text/html", "UTF-8", null);
-
-
+            ArrayList<String> rawEquations = new ArrayList<>();
+            rawEquations.add("'$0°K=-273,15°C$,$0°C=273,15°K$'");
+            rawEquations.add("'$n={m_s/M}=N/N_a=V/V_{mol}$ <br> $n$ liczba moli, $m_s$ masa substancji $M$ masa molowa, $N$ liczba cząstek gazu, $N_a$ liczba avogadra, $V$ objętość gazu, $V_{mol}$ objętość molowa gazu <br> $N_a=6,022*10^23$'");
+            rawEquations.add("'$ρ=m/V$ $[{kg}/m^3]$, $p=F↖{→}_n/s={mg↖{→}}/s$ $[N/m^2=Pa]$ <br> $p_h=ρgh$ <br> $F↖{→}_w=ρ_cgV_{ciala}$ <br> $ρ$ gęstość, $m$ masa $V$ objętość, $p$ ciśnienie, $F↖{→}_n$ siła nacisku, $g↖{→}$ przyśpiesznie grawitacyjne, $Pa$ pascal, $p_h$ ciśnienie hydrostatyczne, $h$ wysokość, $F↖{→}_w$ siła wyporu, $ρ_c$ gęstość cieczy, $V_{ciala}$ objętość zanurzonej częsci ciała'");
+            rawEquations.add("'$C_w=Q/{mΔT}$ $[J/{kg*K}]$ <br> $Q=mC_wΔT$ <br> $C_w$ ciepło właściwe, $Q$ ciepło, Ciepło właściwe ważnych substancji to $C_{wody}=4190$ <br> $[J/{kg*k}]$ $C_{lodu}=2100$  $[J/{kg*k}]$'");
+            rawEquations.add("'Dla gazu doskonałego (Clapeyron) <br> $pV=nRT$ <br> $pV={NKT}$ <br> Dla gazu rzeczywistego (van der Waals) <br> $(p+a/V_m^2)(V_m-b)=RT$ <br> $p$ ciśnienie $[N/m={Pa}]$, $N$ liczba cząstek gazu, $K$ stała Boltzmana  $V$ objętość $[m^3]$, $a,b$ stałe dla danego gazu, $V_m=V/n$ objętość molowa  $n$ liczba moli, $R$ stała gazowa $R=8,31$ $[J/{{mol}*K}]$, $T$ temperatura $[K]$'");
+            rawEquations.add("'$pV={const}$, $p$ ciśnienie, $V$ objętość <br> Jeżeli podczas przemiany masa gazu nie ulega zmianie to ciśnienie jest odwrotnie proporcjonalne do objętośći.'");
+            rawEquations.add("'$V/T=const$, $V$ objętość, $T$ temperatura <br> Dla stałej masy gazu objętość jest wprost proporcjonalna do temperatury.'");
+            rawEquations.add("'$p/T=const$, $p$ ciśnienie, $T$ temperatura <br> Dla stałej masy gazu ciśnienie jest wprost proporcjonalne do temperatury.'");
+            rawEquations.add("'W przemianie adiabatycznej, nie zachodzi wymiana ciepła z otoczeniem, podczas sprężania wzrasta temperatura i ciśnienie gazu. <br> $pV^χ={const}$, $p_0V_0^χ=p_kV_k^χ$, $χ=C_p/C_v$ <br> $p$ ciśnienie, $V$ objętość, $χ$ współczynnik adiabaty, $C_p$ ciepło molowe przy stałym ciśnieniu, $C_v$ ciepło molowe przy stałej objętości, $p_0$ ciśnienie początkowe, $V_0$ objętość początkowa, $p_k$ ciśnienie końcowe, $V_k$ objętość końcowa'");
+            rawEquations.add("'$E_{ksr}=i/2KT$, $[J]$ $E_{ksr}$ średnia energia kinetyczna, $K$ stała Boltzmana, $T$ temperatura <br> $i=3$  dla cząsteczek 1 atomowych, $i=5$ dla cząsteczek 2 atomowych, $i=6$ dla cząsteczek 3 i więcej atomowych'");
+            rawEquations.add("'$ΔU=Q+W$, $[J]$ $ΔU=nC_vΔT$ <br> $ΔU$ zmiana energii wewnętrznej, $Q$ ciepło, $W$ praca, $ΔT$ zmiana temperatury, $n$ liczba moli, $C_v$ ciepło molowe przy stałej objetosci'");
+            rawEquations.add("'$W=∫_cpdV$ lub $W=-∫_cpdV$, dla przemiany izohorycznej $W=0$ <br> Praca to pole figury pod wykresem ciśnienia od objętości, sprężaniu gazu czyli dodatniej pracy sił zewnęrznych towarzyszy wzrost tempratury, a rozpręzaniu czyli ujemnej pracy sił zewnętrznych spadek temperatury. Jeżeli siły zwenętrzne wykonują ujemną pracę to gaz wykonuje dodatnią. W zamkniętym cyklu termodynamicznym praca zawsze jest dodatnia.'");
+            rawEquations.add("'Niemożliwy jest taki proces termodynamiczny, którego jedynym rezultatem byłoby przekazanie ciepła przez ciało chłodniejsze do ciała cieplejszego. Niemożliwe jest zbudowanie silnika cieplnego, którego sprawność wynosi 100%.'");
+            rawEquations.add("'$S={ΔQ}/T$, $[J/K]$ <br> Dla procesów odwracalnych i nieodwracalnych mozemy zapisać nierówność $S≥{ΔQ}/T$ <br> $S$ entropia czyli miara nieuporządkowania, $ΔQ$ zmiana ciepła, $T$ temperatura, drugą zasadę termodynamiki można zapisać następująco: <br> Całkowita entropia układu nie może maleć.'");
+            rawEquations.add("'$η=W/Q_1={Q_1-Q_2}/Q_1=1-Q_2/Q_1$ <br> Dla silników Carno $η={T_1-T_2}/T_1=1-T_2/T_1$ <br> $η$ sprawność, $W$ praca, $Q_1$ ciepło początkowe, $Q_2$ ciepło końcowe, $T_1$ temperatura początkowa, $T_2$ temperatura końcowa'");
+            rawEquations.add("'$Q=nCΔT$ <br> $C$ ciepło w zależności od rodzaju przemiany <br> $C_v=Q_v/{n*ΔT}$ <br> Dla czastek 1 atomowych $C_v=3/2R$, a $C_p=5/2R$, dla czastek 2 atomowych $C_v=3/2R$, a $C_p=7/2R$ <br> $Q_v$ ciepło przy stałej objętości, $Q_p$ ciepło przy stałym ciśnieniu, $ΔT$ rożnica temperatur, $n$ liczba moli <br> $C_p$ ciepło molowe przy stałym ciśnieniu, $C_v$ ciepło molowe przy stałej objętości'");
+            fillWebViews(generateEquationsInHtmlStrings(rawEquations));
             materialDesignFAM.setVisibility(View.VISIBLE);
-            menu.setTitle(R.string.termodynamika);
 
-*/
+/*
         else if (id == R.id.grawitacja) {
             scrollView.fullScroll(ScrollView.FOCUS_UP);
 
