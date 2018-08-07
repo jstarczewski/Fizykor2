@@ -1,101 +1,32 @@
 0 Stopni Kelwinów to @ '$0°K=-273,15°C$,$0°C=273,15°K$'
-Gęstość @
-'$ρ=m/V$ $[{kg}/m^3]$'
-Ciśnienie @
-'$p=F↖{→}_n/s={mg↖{→}}/s$'
-            Fiszka = Fiszka2;}
-        else if (liczba == 3) {textViewDwa.setText("Ciśnienie hydrostatyczne");
-            String Fiszka3 = "'$p_h=ρgh$'";
-            Fiszka = Fiszka3;}
-        else if (liczba == 4) {textViewDwa.setText("Siła wyporu");
-            String Fiszka4 = "' $F↖{→}_w=ρ_cgV_{ciala}$'";
-            Fiszka = Fiszka4;}
-        else if (liczba == 5) {textViewDwa.setText("Ciepło właściwe");
-            String Fiszka5 = "'$C_w=Q/{mΔT}$ $[J/{kg*K}]$'";
-            Fiszka = Fiszka5;}
-        else if (liczba == 6) {textViewDwa.setText("Liczba Moli");
-            String Fiszka6 = "'$n={m_s/M}=N/N_a=V/V_{mol}$'";
-            Fiszka = Fiszka6;}
-        else if (liczba == 7) {textViewDwa.setText("Rówanie gazu doskonałego (Clapeyrona)");
-            String Fiszka7 = "'$pV=nRT$'";
-            Fiszka = Fiszka7;}
-        else if (liczba == 8) {textViewDwa.setText("Przemiana izotermiczna");
-            String Fiszka8 = "'$pV={const}$'";
-            Fiszka = Fiszka8;}
-        else if (liczba == 9) {textViewDwa.setText("Przemiana izobaryczna");
-            String Fiszka9 = "'$V/T=const$'";
-            Fiszka = Fiszka9;}
-        else if (liczba == 10) {textViewDwa.setText("Przemiana izohoryczna");
-            String Fiszka10 = "'$p/T=const$'";
-            Fiszka = Fiszka10;}
-        else if (liczba == 11) {textViewDwa.setText("Przemiana adiabatyczna");
-            String Fiszka11 = "'$pV^χ={const}$'";
-            Fiszka = Fiszka11;}
-        else if (liczba == 12) {textViewDwa.setText("Współczynnik adiabaty");
-            String Fiszka12 = "'$χ=C_p/C_v$'";
-            Fiszka = Fiszka12;}
-        else if (liczba == 13) {textViewDwa.setText("Definicja przemiany adiabatyczej");
-            String Fiszka13 = "'W przemianie adiabatycznej, nie zachodzi wymiana ciepła z otoczeniem, podczas sprężania wzrasta temperatura i ciśnienie gazu'";
-            Fiszka = Fiszka13;}
-        else if (liczba == 14) {textViewDwa.setText("Ciepło molowe gazu doskonałego przy stałej objętości");
-            String Fiszka14 = "'$C_v=Q_v/{n*ΔT}$'";
-            Fiszka = Fiszka14;}
-        else if (liczba == 15) {textViewDwa.setText("Ciepło molowe gazu doskonałego przy stałym ciśnieniu");
-            String Fiszka15 = "'$C_p=Q_c/{n*ΔT}$'";
-            Fiszka = Fiszka15;}
-        else if (liczba == 16) {textViewDwa.setText("Ciepło molowe gazu doskonałego przy stałej objętości dla cząsteczek 2-atomowych");
-            textViewDwa.setTextSize(30);
-            String Fiszka16 = "'$C_v=3/2R+R$'";
-            Fiszka = Fiszka16;}
-        else if (liczba == 17) {textViewDwa.setText("Ciepło molowe gazu doskonałego przy stałej objętości dla cząsteczek 1-atomowych");
-            textViewDwa.setTextSize(30);
-            String Fiszka17 = "'$C_v=3/2R$'";
-            Fiszka = Fiszka17;}
-        else if (liczba == 18) {textViewDwa.setText("Ciepło molowe gazu doskonałego przy stałym ciśnieniu dla cząsteczek 2-atomowych");
-            textViewDwa.setTextSize(30);
-            String Fiszka18 = "'$C_p=5/2R+R$'";
-            Fiszka = Fiszka18;}
-        else if (liczba == 19) {textViewDwa.setText("Ciepło molowe gazu doskonałego przy stałym ciśnieniu dla cząsteczek 1-atomowych");
-            textViewDwa.setTextSize(30);
-            String Fiszka19 = "'$C_p=5/2R$'";
-            Fiszka = Fiszka19;}
-        else if (liczba == 20) {textViewDwa.setText("Średnia energia kinetyczna cząsteczki");
-            String Fiszka20 = "'$E_{ksr}=i/2RT$'";
-            Fiszka = Fiszka20;}
-        else if (liczba == 21) {textViewDwa.setText("Ogólna postać pierwszej zasady termodynamiki");
-            String Fiszka21 = "'$ΔU=Q+W$'";
-            Fiszka = Fiszka21;}
-        else if (liczba == 22) {textViewDwa.setText("Pierwsza zasada termodynamiki z wykorzystaniem ciepła molowego przy stałym ciśnieniu");
-            textViewDwa.setTextSize(25);
-            String Fiszka22 = "'$ΔU=nC_vΔT$'";
-            Fiszka = Fiszka22;}
-        else if (liczba == 23) {textViewDwa.setText("Praca wykonana przez siły zewnętrzne nad gazdem podczas jego sprężania");
-            String Fiszka23 = "'$W=∫_cpdV$'";
-            Fiszka = Fiszka23;}
-        else if (liczba == 24) {textViewDwa.setText("Praca wykonana przez gaz podczas sprężania się");
-            String Fiszka24 = "'$W=-∫_cpdV$'";
-            Fiszka = Fiszka24;}
-        else if (liczba == 25) {textViewDwa.setText("Praca w przemianie izohorycznej");
-            String Fiszka25 = "'$W=0$'";
-            Fiszka = Fiszka25;}
-        else if (liczba == 26) {textViewDwa.setText("Entropia");
-            String Fiszka26 = "'$S={ΔQ}/T$'";
-            Fiszka = Fiszka26;}
-        else if (liczba == 27) {textViewDwa.setText("Sprawność");
-            String Fiszka27 = "'$η=W/Q_1={Q_1-Q_2}/Q_1=1-Q_2/Q_1$'";
-            Fiszka = Fiszka27;}
-        else if (liczba == 28) {textViewDwa.setText("Sprawność dla silników Carno");
-            String Fiszka28 = "'$η={T_1-T_2}/T_1=1-T_2/T_1$'";
-            Fiszka = Fiszka28;}
-        else if (liczba == 29) {textViewDwa.setText("Druga zasada termodynamiki");
-            String Fiszka29 = "'Niemożliwy jest taki proces termodynamiczny, którego jedynym rezultatem byłoy przekazanie ciepła przez ciało chłodniejsze do ciała cieplejszego.'";
-            Fiszka = Fiszka29;}
-        else if (liczba == 30) {textViewDwa.setText("Entropia dla procesów odwracalnych i nieodwracalnych");
-            String Fiszka30 = "'$S≥{ΔQ}/T$'";
-            Fiszka = Fiszka30;}
-        else if (liczba == 31) {textViewDwa.setText("Równanie gazu doskonałego z wykorzystaniem liczby cząstek");
-            String Fiszka30 = "'$pV={NKT}$'";
-            Fiszka = Fiszka30;}
-        else if (liczba == 32) {textViewDwa.setText("Równanie stanu gazu rzeczywistego (van der Waals'a)");
-            String Fiszka30 = "'$(p+a/V_m^2)(V_m-b)=RT$ '";
-            Fiszka = Fiszka30;}
+Gęstość @ '$ρ=m/V$ $[{kg}/m^3]$'
+Ciśnienie @ '$p=F↖{→}_n/s={mg↖{→}}/s$'
+Ciśnienie hydrostatyczne @ '$p_h=ρgh$'
+Ciepło właściwe @ '$C_w=Q/{mΔT}$ $[J/{kg*K}]$'
+Liczba Moli @ '$n={m_s/M}=N/N_a=V/V_{mol}$'
+Rówanie gazu doskonałego (Clapeyrona) @ '$pV=nRT$'
+Przemiana izotermiczna @ '$pV={const}$'
+Przemiana izobaryczna @ '$V/T=const$'
+Przemiana izohoryczna @ '$p/T=const$'
+Przemiana adiabatyczna @ '$pV^χ={const}$'
+Współczynnik adiabaty @ '$χ=C_p/C_v$'
+Definicja przemiany adiabatyczej @ 'W przemianie adiabatycznej, nie zachodzi wymiana ciepła z otoczeniem, podczas sprężania wzrasta temperatura i ciśnienie gazu'
+Ciepło molowe gazu doskonałego przy stałej objętości @ '$C_v=Q_v/{n*ΔT}$'
+Ciepło molowe gazu doskonałego przy stałym ciśnieniu @ '$C_p=Q_c/{n*ΔT}$'
+Ciepło molowe gazu doskonałego przy stałej objętości dla cząsteczek 2-atomowych @ '$C_v=3/2R+R$'
+Ciepło molowe gazu doskonałego przy stałej objętości dla cząsteczek 1-atomowych @ '$C_v=3/2R$'
+Ciepło molowe gazu doskonałego przy stałym ciśnieniu dla cząsteczek 2-atomowych @ '$C_p=5/2R+R$'
+Ciepło molowe gazu doskonałego przy stałym ciśnieniu dla cząsteczek 1-atomowych @ '$C_p=5/2R$'
+Średnia energia kinetyczna cząsteczki @ '$E_{ksr}=i/2RT$'
+Ogólna postać pierwszej zasady termodynamiki @ '$ΔU=Q+W$'
+Pierwsza zasada termodynamiki z wykorzystaniem ciepła molowego przy stałym ciśnieniu @ '$ΔU=nC_vΔT$'
+Praca wykonana przez siły zewnętrzne nad gazdem podczas jego sprężania @ '$W=∫_cpdV$'
+Praca wykonana przez gaz podczas sprężania się @ '$W=-∫_cpdV$'
+Praca w przemianie izohorycznej @ '$W=0$'
+Entropia @ '$S={ΔQ}/T$'
+Sprawność @ '$η=W/Q_1={Q_1-Q_2}/Q_1=1-Q_2/Q_1$'
+Sprawność dla silników Carno @ '$η={T_1-T_2}/T_1=1-T_2/T_1$'
+Druga zasada termodynamiki @ 'Niemożliwy jest taki proces termodynamiczny, którego jedynym rezultatem byłoy przekazanie ciepła przez ciało chłodniejsze do ciała cieplejszego.'
+Entropia dla procesów odwracalnych i nieodwracalnych @ '$S≥{ΔQ}/T$'
+Równanie gazu doskonałego z wykorzystaniem liczby cząstek @ '$pV={NKT}$'
+Równanie stanu gazu rzeczywistego (van der Waals'a) @ '$(p+a/V_m^2)(V_m-b)=RT$ '
