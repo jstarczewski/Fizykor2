@@ -429,68 +429,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return htmlEquations;
     }
 
-    @Override
-    protected void onPostResume() {
-
-        android.support.v7.app.ActionBar menu = getSupportActionBar();
-
-
-        if (sprawdzenie == 101) {
-            menu.setTitle(R.string.kinematyka);
-        }
-        if (sprawdzenie == 102) {
-            menu.setTitle(R.string.dynamika);
-        }
-        if (sprawdzenie == 103) {
-            menu.setTitle(R.string.praca_moc_energia);
-        }
-        if (sprawdzenie == 104) {
-            menu.setTitle(R.string.bry_a_sztywna);
-        }
-        if (sprawdzenie == 105) {
-            menu.setTitle(R.string.termodynamika);
-        }
-        if (sprawdzenie == 106) {
-            menu.setTitle(R.string.grawitacja_i_kosmos);
-        }
-        if (sprawdzenie == 107) {
-            menu.setTitle(R.string.ruch_drgaj_cy);
-        }
-        if (sprawdzenie == 108) {
-            menu.setTitle(R.string.fale_mechaniczne);
-        }
-        if (sprawdzenie == 109) {
-            menu.setTitle(R.string.elektrostatyka);
-        }
-        if (sprawdzenie == 110) {
-            menu.setTitle(R.string.pr_d_sta_y);
-        }
-        if (sprawdzenie == 111) {
-            menu.setTitle(R.string.magnetyzm);
-        }
-        if (sprawdzenie == 112) {
-            menu.setTitle(R.string.indukcja_elektromagnetyczna);
-        }
-        if (sprawdzenie == 113) {
-            menu.setTitle(R.string.pr_d_przemienny_i_obwody);
-        }
-        if (sprawdzenie == 114) {
-            menu.setTitle(R.string.optyka);
-        }
-        if (sprawdzenie == 115) {
-            menu.setTitle(R.string.fizyka_wsp_czesna);
-        }
-        if (sprawdzenie == 116) {
-            menu.setTitle(R.string.sta_e_fizyczne);
-        }
-        if (sprawdzenie == 117) {
-            menu.setTitle(R.string.przedrostki);
-        }
-
-        super.onPostResume();
-    }
-
-    private void displayData(int id) {
+   private void displayData(int id) {
 
         if (id == R.id.kinematyka) {
             scrollView.fullScroll(ScrollView.FOCUS_UP);
@@ -505,21 +444,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     R.string.rzut_poziomy,
                     R.string.rzut_uko_ny,
                     R.string.ruch_po_okr_gu,
-                    R.string.przy_pieszenie_do_rodkowe,
-                    R.string.pr_dko_rednia
+                    R.string.pr_dko_rednia,
+                    R.string.przy_pieszenie_do_rodkowe
             };
             fillTextViews(titles);
             ArrayList<String> rawEquations = new ArrayList<>();
-            rawEquations.add(" '$v↖{→}={∆s}/t [m/s]$ <br> $v↖{→}$ prędkość, $∆s$ przemieszczenie/przebyta droga, $t$ czas '");
-            rawEquations.add("'$v↖{→}=v_0+at [m/s]$ , $a↖{→}={∆v}/t [m/s^2]$ <br> $v↖{→}$ prędkość, $v_0$ prędkość początkowa, $a↖{→}$ przyśpieszenie, $t$ czas, dla $a↖{→}>0$ ruch jednostajnie przyśpieszony, dla $a↖{→}<0$ ruch jednostajnie opóźniony '");
-            rawEquations.add("'$s = v_0t +↙{-} {at^2}/2$ $[m]$,   $s = {v_0 + v_k}/2 t$,   $s = {v_k^2-v_0^2}/{2a}$ <br> $s$ droga , $a↖{→}$ przyśpieszenie, $t$ czas, $v_k$ prędkość końcowa, $v_0$ prędkość początkowa <br> $s_1:s_2:s_3 ..s_n = 1:3:5..n$ <br> Drogi przebyte przez ciało w ruchu jednostajnie przyśpieszonym bez prędkości początkowej mają się do siebie jak kolejne liczby nieparzyste.'");
-            rawEquations.add("'$v↖{→}(t)=v_0+↙{-}at$ $[m/s]$ <br> $v(t)$ prędkość od czasu, $a↖{→}$ przyśpieszenie, $t$ czas <br> $x(t)=x_0+s$ $[m]$ <br> $x(t)$ położenie od czasu, $x_0$ położenie początkowe, w miejsce $s$ wstawiamy wzór na drogę w zależności od ruchu jakim porusza się rozpatrywane ciało '");
-            rawEquations.add("'Przy spadku swobodnym, w pionie, bez oporów ruchu $a↖{→}=g↖{→}$, $v↖{→}_0 = 0$. Spadek swobodny jest ruchem jednostajnie przyśpieszonym, Dla rzutu pionowego $h(t)=x_0+↙{-}v_0↖{→}t+↙{-}{g↖{→}t^2}/2$, gdzie $g$ to przyśpiesznie ziemskie.'");
-            rawEquations.add("'$Z=v↖{→}_ot$ ,  $v↖{→}_{ky}=g↖{→}t$,  $tgα={v_y}/{v_x}={g_t}/v_o$,   $v↖{→}_c=√{v↖{→}_x^2+v↖{→}_y^2}$ <br> $Z$ zasięg, $v↖{→}_{ky}$ prędkość końcowa pionowej składowej wekotra prędkości całkowitej, $tgα$ tangens kąta pod jakim ciało uderzy w ziemię, $v↖{→}_c$ prędkość całkowita, która zawsze jest styczna do toru, $v↖{→}_x$ pozioma składowa wektora prędkośi całkowitej, $v↖{→}_y$ pionowa składowa wektora prędkości całkowitej '");
-            rawEquations.add("'$v↖{→}_{0y}=v_0sinα$, $v↖{→}_{0x}=v_0cosα$, $t_{wz}={v↖{→}_0sinα}/g↖{→}$, $t_{cal}={2v_0sinα}/g$, $h_{max}={v_0^2sin^2α}/{2g}$, $Z={v_0^2sin2α}/g$ <br> $α$ kąt pod jakim ciało jest nachylone do osi O:X, $v↖{→}_0$, $v_0$ prędkość początkowa, $v↖{→}_{0x}$  prędkość początkowa poziomej skłądowej prędkości, $v↖{→}_{0y}$  prędkość początkowa pionowej składowej prędkości, $t_{wz}$ czas wznoszenia, $t_{cal}$ czas całkowity, $h_{max}$ maksymalna wysokość na jaką wzniesie się ciało. Czas wznoszenia jest równy czasowi spadania ciała.'");
-            rawEquations.add("'$v↖{→}= s/t= {2πr}/T = {2πrf}$, $f=1/T$ <br> $v↖{→}$ prędkość ciała w ruchu po okręgu, $f$ czestotliwość, $r$ promień okręgu, $T$ okres, czas jednego pełnego ruchu, '");
-            rawEquations.add("'Szybkość średnia to stosunek całkowitej drogi przebytej podczasu ruchu do całkowitego czasu trwania tego ruchu.'");
-            rawEquations.add("'$a_d↖{→}=v^2/r$ $[m/s^2]$ <br> $a_d↖{→}$ przyśpieszenie dośrodkowe, $r$ promień, $v$ prędkość'");
+            rawEquations.add(getString(R.string.e_ruch_jednostajny));
+            rawEquations.add(getString(R.string.e_ruch_jednostajnie_zmienny));
+            rawEquations.add(getString(R.string.e_droga_w_ruchu_jednostajnie_zmiennym));
+            rawEquations.add(getString(R.string.e_rownania_ruchu));
+            rawEquations.add(getString(R.string.e_spadek_swobodny));
+            rawEquations.add(getString(R.string.e_rzut_poziomy));
+            rawEquations.add(getString(R.string.e_rzut_ukosny));
+            rawEquations.add(getString(R.string.e_ruch_po_okregu));
+            rawEquations.add(getString(R.string.e_szybkosc_srednia));
+            rawEquations.add(getString(R.string.e_przyspieszenie_dosrodkowe));
             fillWebViews(generateEquationsInHtmlStrings(rawEquations));
             materialDesignFAM.setVisibility(View.VISIBLE);
 
@@ -529,16 +468,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             sprawdzenie = 2;
             scrollView.fullScroll(ScrollView.FOCUS_UP);
             setViewsVisibility(7);
-            int titles[] = {R.string.pierwsza_zasada_dynamiki, R.string.druga_zasada_dynamiki, R.string.trzecia_zasada_dynamiki, R.string.dynamiczne_r_wania_ruchu, R.string.tarcie, R.string.r_wnania_ruchu, R.string.niewa_ko_i_winda};
+            int titles[] = {R.string.pierwsza_zasada_dynamiki, R.string.druga_zasada_dynamiki,
+                    R.string.trzecia_zasada_dynamiki, R.string.dynamiczne_r_wania_ruchu, R.string.tarcie, R.string.r_wnania_ruchu, R.string.niewa_ko_i_winda};
             fillTextViews(titles);
             ArrayList<String> rawEquations = new ArrayList<>();
-            rawEquations.add("'Jeżeli $F↖{→}_w=0$ to w izolowanym układzie ciało/punkt materialny spoczywa, lub porusza się ruchem jednostajnym, $F↖{→}_w$ siła wypadkowa'");
-            rawEquations.add("'$a↖{→}=F↖{→}/m [{{kg*m/{s^2}}/{kg}=N/{kg}]$ <br> $F↖{→}={∆p↖{→}}/{t}$ <br> $p↖{→}=mv↖{→}$ $[kg*{m/s}]$ <br> $F↖{→}$ siła, $a↖{→}$ przyśpieszenie, $m$ masa, $∆p$ zmiana pędu, $t$ czas, $N$ Newton, jednostka siły <br> $p↖{→}=p↖{→}_1+p↖{→}_{2}...p↖{→}_n={const}↖{→}$ <br> Suma pędów ciał wchodzących w skład układu izolowanego jest stała. <br> $p↖{→}$ pęd, $v↖{→}$ prędkość, $m$ masa, $p↖{→}_c$ pęd całkowity,'");
-            rawEquations.add("'$F↖{→}_{AB}=-F↖{→}_{BA}$ <br> $F↖{→}_{AB}$ siła z jaką ciało A działa na ciało B, $F↖{→}_{BA}$ siła z jaką ciało B działa na ciało A'");
-            rawEquations.add("'Dla dwóch bloczków o masach $m_1$ i $m_2$ połączonych nierozciągliwą, lekką nitką, bez siły tarcia ciągniętych siłą $F↖{→}$, zaczepioną o drugi bloczek, o zwrocie skierowanym w prawo <br> $F_{w1}=F_n$, $F_{w2}=F-F_n$ <br> $m_1a=F_n$, $m_2a=F-F_n$ <br>  $m_1a+m_2a=F ⇒ a(m_1+m_2)=F ⇒$ $a=F/{m_1+m_2}$ <br> $F_{w1}$, $F_{w2}$ siła wypadkowa pierwsza u druga, $F_n$ siła naciągu miedzy bloczkami, $a_1$, $a_2$ przyśpieszenie pierwszego, drugie ciała, $a$ przyśpieszenie układu '");
-            rawEquations.add("'$T=μF_n$ <br> $T↖{→}_s=μ_sF_n$, $T↖{→}_k=μ_kF_n$ <br> $T↖{→}$ tarcie, $μ$ współczynnik tarcia, $F_n$ siła nacisku, $T↖{→}_s$ tarcie statyczne, $μ_s$ wsp. tarcia statycznego, $T↖{→}_k$ tarcie kinetyczne $μ_k$ wsp. tarcia kinetycznego <br> $T_{smax}>T_{kmax}$'");
-            rawEquations.add("'Dla ciała leżącego na boku $S$ równi pochyłej o krótszej przyprostokątnej $h$ i dłuższej $l$, przeciwprostokątnej $S$, oraz kącie $α$, dla którego $sinα=h/s$ <br> $F↖{→}_g=mg$,  $sinα=F_s/F_g ⇒ F↖{→}_s=mgsinα$, $cosα=F_n/F_g ⇒ F↖{→}_n=mgcosα$, $T↖{→}=μmgcosα$ <br> $F↖{→}_n$ siła nacisku, $F↖{→}_s$ siła zsuwająca, $F↖{→}_g$ siła grawitacji, $T↖{→}$ siła tarcia, $μ$ wsp. tarcia na równi, na ciało wjeżdżające na równię działa jedynie siła zsuwająca.'");
-            rawEquations.add("'Dla windy jadącej w górę $F↖{→}_n=mg+ma$, Dla windy jadącej w dół $F↖{→}_n=mg-ma$, Ruch przyśpieszony w górę to ruch opóźniony w dół, a przyśpieszony w dół, to opóźniony w górę <br> $F↖{→}_n$ siła nacisku, $g$ przyśpieszenie ziemskie, $a$ przyśpieszenie windy, $m$ masa obiektu w windzie. Jeżeli $a=g$ to występuje nieważkość.'");
+            rawEquations.add(getString(R.string.e_pierwsza_zasada_dynamiki));
+            rawEquations.add(getString(R.string.e_druga_zasada_dynamiki));
+            rawEquations.add(getString(R.string.e_trzecia_zasada_dynamiki));
+            rawEquations.add(getString(R.string.e_dynamiczne_rownania_ruchu));
+            rawEquations.add(getString(R.string.e_tarcie));
+            rawEquations.add(getString(R.string.e_rownania_ruchu_dyn));
+            rawEquations.add(getString(R.string.e_niewazkosc_winda));
             fillWebViews(generateEquationsInHtmlStrings(rawEquations));
 
             materialDesignFAM.setVisibility(View.VISIBLE);
@@ -556,12 +496,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             int[] titles = {R.string.praca, R.string.moc, R.string.energia_kientyczna, R.string.energia_potencjalna, R.string.energia_potencjalna_spr_ysto_ci, R.string.zasadaEnergii};
             fillTextViews(titles);
             ArrayList<String> rawEquations = new ArrayList<>();
-            rawEquations.add("'$W=F↖{→}◦∆r↖{→}$, $W=Frcosα$, $[N*m=J]$ <br> $W$ praca, $F↖{→}$ siła, $∆r↖{→}$ zmiana położenia, $α$ kąt zawarty między wektorem siły i przemieszczenia, $J$ dżul <br> $W=∫F↖{→}{dr↖{→}$ <br> $W=∫F↖{→}dr↖{→}$ całka siły po przemiszeczeniu '");
-            rawEquations.add("'$P=W/t$, $[J/s=W]$, gdy $v↖{→}={const}↖{→}$ to $P=Fv$ <br> $P$ moc, $v$ prędkość, $F$ siła, jednostka mocy to Wat $W$'");
-            rawEquations.add("'$E_k={mv^2}/2$, $[kg * m^2/{s^2}=J]$ <br> $E_k$ energia kinetyczna, $m$ masa, $v↖{→}$ prędkość, jednostka energi to dżul $J$'");
-            rawEquations.add("'$E_p=mgh$, $[kg*m^2/{s^2}=J]$, $R_z>>h$ <br> $E_p$ energia potencjalna, $m$ masa, $g↖{→}$ przyśpieszenie grawitacyjne, $h$ wysokość, $R_z$ promień ziemi, $J$ dżul'");
-            rawEquations.add("'$E_{ps}={k*x^2}/2$, $[J]$ <br> $E_{ps}$ energia potencjalna sprężystości, $k$ współczynnik sprężystości $[N/m]$, $x$ wychylenie/wydłużenie sprężyny'");
-            rawEquations.add("'W izolowanym układzie, całkowita energia mechaniczna nie zmienia sie.'");
+            rawEquations.add(getString(R.string.e_praca));
+            rawEquations.add(getString(R.string.e_moc));
+            rawEquations.add(getString(R.string.e_energia_kinetyczna));
+            rawEquations.add(getString(R.string.e_energia_potencjalna));
+            rawEquations.add(getString(R.string.e_energia_potencjalna_sprezystosci));
+            rawEquations.add(getString(R.string.e_zasada_energii));
             fillWebViews(generateEquationsInHtmlStrings(rawEquations));
             materialDesignFAM.setVisibility(View.VISIBLE);
 
@@ -606,11 +546,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             setViewsVisibility(16);
 
 
-
-
             int[] titles = {R.string.skala_kelwina, R.string.ci_nienie_i_obj_to, R.string.ciep_o_w_a_ciwe, R.string.cz_steczka, R.string.r_wnanie_clapeyrona,
-            R.string.przemiana_izotermiczna_t_const, R.string.przemina_izobaryczna_p_const, R.string.przemiana_izohoryczna_v_const, R.string.przemiana_adiabatyczna_q_const,
-            R.string.cieplo_przy_obje, R.string.energia_kinetyczna, R.string.pierwsza_zasada_termodynamiki, R.string.praca, R.string.druga_zasada_termodynamiki, R.string.sprawno, R.string.entropia};
+                    R.string.przemiana_izotermiczna_t_const, R.string.przemina_izobaryczna_p_const, R.string.przemiana_izohoryczna_v_const, R.string.przemiana_adiabatyczna_q_const,
+                    R.string.cieplo_przy_obje, R.string.energia_kinetyczna, R.string.pierwsza_zasada_termodynamiki, R.string.praca, R.string.druga_zasada_termodynamiki, R.string.sprawno, R.string.entropia};
             fillTextViews(titles);
 
             ArrayList<String> rawEquations = new ArrayList<>();
@@ -632,8 +570,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             rawEquations.add("'$Q=nCΔT$ <br> $C$ ciepło w zależności od rodzaju przemiany <br> $C_v=Q_v/{n*ΔT}$ <br> Dla czastek 1 atomowych $C_v=3/2R$, a $C_p=5/2R$, dla czastek 2 atomowych $C_v=3/2R$, a $C_p=7/2R$ <br> $Q_v$ ciepło przy stałej objętości, $Q_p$ ciepło przy stałym ciśnieniu, $ΔT$ rożnica temperatur, $n$ liczba moli <br> $C_p$ ciepło molowe przy stałym ciśnieniu, $C_v$ ciepło molowe przy stałej objętości'");
             fillWebViews(generateEquationsInHtmlStrings(rawEquations));
             materialDesignFAM.setVisibility(View.VISIBLE);
+        }
 
-/*
         else if (id == R.id.grawitacja) {
             scrollView.fullScroll(ScrollView.FOCUS_UP);
 
@@ -664,7 +602,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fillWebViews(generateEquationsInHtmlStrings(rawEquations));
             materialDesignFAM.setVisibility(View.VISIBLE);
 
-/*
+
         } else if (id == R.id.drgajacy) {
 
             scrollView.fullScroll(ScrollView.FOCUS_UP);
@@ -673,148 +611,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             sprawdzenieMat = 7;
             sprawdzenie = 7;
 
-
-            card1.setVisibility(View.VISIBLE);
-            card2.setVisibility(View.VISIBLE);
-            card3.setVisibility(View.VISIBLE);
-            card4.setVisibility(View.VISIBLE);
-            card5.setVisibility(View.VISIBLE);
-            card6.setVisibility(View.VISIBLE);
-            card7.setVisibility(View.VISIBLE);
-            card8.setVisibility(View.VISIBLE);
-            card9.setVisibility(View.VISIBLE);
-            card10.setVisibility(View.GONE);
-            card11.setVisibility(View.GONE);
-            card12.setVisibility(View.GONE);
-            card13.setVisibility(View.GONE);
-            card14.setVisibility(View.GONE);
-            card15.setVisibility(View.GONE);
-            card16.setVisibility(View.GONE);
-
-
-            textView11.setVisibility(View.VISIBLE);
-            textView12.setVisibility(View.VISIBLE);
-            textView13.setVisibility(View.VISIBLE);
-            textView14.setVisibility(View.VISIBLE);
-            textView15.setVisibility(View.VISIBLE);
-            textView16.setVisibility(View.VISIBLE);
-            textView17.setVisibility(View.VISIBLE);
-            textView18.setVisibility(View.VISIBLE);
-            textView19.setVisibility(View.VISIBLE);
-            textView20.setVisibility(GONE);
-            textView21.setVisibility(GONE);
-            textView22.setVisibility(GONE);
-            textView23.setVisibility(GONE);
-            textView24.setVisibility(GONE);
-            textView25.setVisibility(GONE);
-            textView26.setVisibility(GONE);
-
-
-            webView1.setVisibility(View.VISIBLE);
-            webView2.setVisibility(View.VISIBLE);
-            webView3.setVisibility(View.VISIBLE);
-            webView4.setVisibility(View.VISIBLE);
-            webView5.setVisibility(View.VISIBLE);
-            webView6.setVisibility(View.VISIBLE);
-            webView7.setVisibility(View.VISIBLE);
-            webView8.setVisibility(View.VISIBLE);
-            webView9.setVisibility(View.VISIBLE);
-            webView10.setVisibility(GONE);
-            webView11.setVisibility(GONE);
-            webView12.setVisibility(GONE);
-            webView13.setVisibility(GONE);
-            webView14.setVisibility(GONE);
-            webView15.setVisibility(GONE);
-            webView16.setVisibility(GONE);
-
-
-            textView11.setText(R.string.po_o_enie_od_czasu);
-            textView12.setText(R.string.pr_dko_od_czasu);
-            textView13.setText(R.string.przy_pieszenie_od_czasu);
-            textView14.setText(R.string.si_aA);
-            textView15.setText(R.string.praca_i_energia);
-            textView16.setText(R.string.zale_no_energi_od_czasu);
-            textView17.setText(R.string.wahad_o_matematyczne);
-            textView18.setText(R.string.wahad_o_fizyczne);
-            textView19.setText(R.string.wahadlo_sprez);
-
-            String path = "file:///android_asset/";
-            String polozenie = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$x(t)=Asin(ωt+ϕ_o)[m]$, $x_{max}=A$ <br> $x(t)$ położenie od czasu, $A$ amplituda, $ω$ częstość kołowa, $t$ czas, $ϕ_o$ przesunięcie początkowe';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String predkoscodCZasu = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$v↖{→}(t)=ωAcos(ωt+ϕ_o)[m/s]$, $v_{max}= ωA$ <br> $v↖{→}(t)$ prędkość od czasu, $A$ amplituda, $ω$ częstość kołowa, $t$ czas, $ϕ_o$ przesunięcie początkowe';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String przyspieszenieOdT = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$a↖{→}(t)=-ω^2Asin(ωt+ϕ_o)[m/s^2]$, $a_{max}= -ω^2A$ <br> $a↖{→}(t)$ przyśpieszenie od czasu, $A$ amplituda, $ω$ częstość kołowa, $t$ czas, $ϕ_o$ przesunięcie początkowe';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String silasprez = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$F↖{→}_s=-kx[kg*m/s^2=N]$, $F_x↖{→}=kx$, $k=mω^2$ <br> $F↖{→}_s$ siła sprężystości, $F_x$ siła wychylająca $k$ współczynnik sprężystości, $x$ wychylenie z punktu równowagi, $m$ masa, $ω$ częstość kołowa';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String energiaPotSp = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$E_{ps}={kx^2}/2$, $E_c={kA^2}/2$, $E_k=E_c-E_{ps}=k/2(A^2-x^2)$ $[J]$ <br> $E_{ps}$ energia potencjalna sprężystości, $E_k$ energia kinetyczna, $E_c$ energia całkowita, $F↖{→}_x$ siła ciągnąca, $x$ wychylenie, $k$ wsp sprężystośći, $A$ amplituda <br> <br> Praca $W$ to pole figury pod wykresem $F_x(x)$ i $W=E_{ps}[J]$ Energia całkowita nie zależy od wychylenia.';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-
-            String ecalCzas = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$E_{ps}={kx^2}/2={kA}/2sin(ωt+ϕ_o)$ <br> $E_k={mv↖{→}^2}/2={mω^2A^2cos^2(ωt+ϕ_o)}/2={kA^2}/2cos^2(ωt+ϕ_o)$ <br> $E_c={kA^2}/2$ <br> $E_{ps}$ energia potencjalna sprężystości, $E_k$ energia kinetyczna, $E_c$ energia całkowita, $k$ wsp spręzystości, $v↖{→}$ prędkość, $A$ amplituda, $ω$ częstość kołowa, $t$ czas, $ϕ_o$ przesunięcie początkowe, $m$ masa';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String wahtMat = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$T=2π√{l/g↖{→}}$ <br> $T$ okres, $l$ długość linki, $g$ przyśpieszenie grawitacyjne, wzór jest poprawny tylko dla małych wychyleń, ok. 10 stopni.';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String wahFiz = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$T=2π√{I/{mg↖{→}d}}$ <br> $T$ okres, $I$ moment bezwładności, $m$ masa $g↖{→}$ przyśpieszenie grawitacyjne, $d$ odległość miedzy środkiem masy a osią obrotu';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String wahSpr = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$T=2π√{m/k}$ <br> $T$ okres, $m$ masa obciążenia, $k$ wsp. sprężystości ';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-
-            webView1.loadDataWithBaseURL("file:///android_asset/", polozenie, "text/html", "UTF-8", null);
-            webView2.loadDataWithBaseURL("file:///android_asset/", predkoscodCZasu, "text/html", "UTF-8", null);
-            webView3.loadDataWithBaseURL("file:///android_asset/", przyspieszenieOdT, "text/html", "UTF-8", null);
-            webView4.loadDataWithBaseURL("file:///android_asset/", silasprez, "text/html", "UTF-8", null);
-            webView5.loadDataWithBaseURL("file:///android_asset/", energiaPotSp, "text/html", "UTF-8", null);
-            webView6.loadDataWithBaseURL("file:///android_asset/", ecalCzas, "text/html", "UTF-8", null);
-            webView7.loadDataWithBaseURL("file:///android_asset/", wahtMat, "text/html", "UTF-8", null);
-            webView8.loadDataWithBaseURL("file:///android_asset/", wahFiz, "text/html", "UTF-8", null);
-            webView9.loadDataWithBaseURL("file:///android_asset/", wahSpr, "text/html", "UTF-8", null);
-
+            int[] titles = {
+            R.string.po_o_enie_od_czasu,
+            R.string.pr_dko_od_czasu,
+            R.string.przy_pieszenie_od_czasu,
+            R.string.si_aA,
+            R.string.praca_i_energia,
+            R.string.zale_no_energi_od_czasu,
+            R.string.wahad_o_matematyczne,
+            R.string.wahad_o_fizyczne,
+            R.string.wahadlo_sprez};
+            fillTextViews(titles);
+            ArrayList<String> rawEquations = new ArrayList<>();
+            rawEquations.add("'$x(t)=Asin(ωt+ϕ_o)[m]$, $x_{max}=A$ <br> $x(t)$ położenie od czasu, $A$ amplituda, $ω$ częstość kołowa, $t$ czas, $ϕ_o$ przesunięcie początkowe'");
+            rawEquations.add("'$v↖{→}(t)=ωAcos(ωt+ϕ_o)[m/s]$, $v_{max}= ωA$ <br> $v↖{→}(t)$ prędkość od czasu, $A$ amplituda, $ω$ częstość kołowa, $t$ czas, $ϕ_o$ przesunięcie początkowe'");
+            rawEquations.add("'$a↖{→}(t)=-ω^2Asin(ωt+ϕ_o)[m/s^2]$, $a_{max}= -ω^2A$ <br> $a↖{→}(t)$ przyśpieszenie od czasu, $A$ amplituda, $ω$ częstość kołowa, $t$ czas, $ϕ_o$ przesunięcie początkowe'");
+            rawEquations.add("'$F↖{→}_s=-kx[kg*m/s^2=N]$, $F_x↖{→}=kx$, $k=mω^2$ <br> $F↖{→}_s$ siła sprężystości, $F_x$ siła wychylająca $k$ współczynnik sprężystości, $x$ wychylenie z punktu równowagi, $m$ masa, $ω$ częstość kołowa'");
+            rawEquations.add("'$E_{ps}={kx^2}/2$, $E_c={kA^2}/2$, $E_k=E_c-E_{ps}=k/2(A^2-x^2)$ $[J]$ <br> $E_{ps}$ energia potencjalna sprężystości, $E_k$ energia kinetyczna, $E_c$ energia całkowita, $F↖{→}_x$ siła ciągnąca, $x$ wychylenie, $k$ wsp sprężystośći, $A$ amplituda <br> <br> Praca $W$ to pole figury pod wykresem $F_x(x)$ i $W=E_{ps}[J]$ Energia całkowita nie zależy od wychylenia.'");
+            rawEquations.add("'$E_{ps}={kx^2}/2={kA}/2sin(ωt+ϕ_o)$ <br> $E_k={mv↖{→}^2}/2={mω^2A^2cos^2(ωt+ϕ_o)}/2={kA^2}/2cos^2(ωt+ϕ_o)$ <br> $E_c={kA^2}/2$ <br> $E_{ps}$ energia potencjalna sprężystości, $E_k$ energia kinetyczna, $E_c$ energia całkowita, $k$ wsp spręzystości, $v↖{→}$ prędkość, $A$ amplituda, $ω$ częstość kołowa, $t$ czas, $ϕ_o$ przesunięcie początkowe, $m$ masa'");
+            rawEquations.add("'$T=2π√{l/g↖{→}}$ <br> $T$ okres, $l$ długość linki, $g$ przyśpieszenie grawitacyjne, wzór jest poprawny tylko dla małych wychyleń, ok. 10 stopni.'");
+            rawEquations.add("'$T=2π√{I/{mg↖{→}d}}$ <br> $T$ okres, $I$ moment bezwładności, $m$ masa $g↖{→}$ przyśpieszenie grawitacyjne, $d$ odległość miedzy środkiem masy a osią obrotu'");
+            rawEquations.add("'$T=2π√{m/k}$ <br> $T$ okres, $m$ masa obciążenia, $k$ wsp. sprężystości '");
+            fillWebViews(generateEquationsInHtmlStrings(rawEquations));
             materialDesignFAM.setVisibility(View.VISIBLE);
-            menu.setTitle(R.string.ruch_drgaj_cy);
 
-
+/*
         } else if (id == R.id.mechaniczne) {
 
             scrollView.fullScroll(ScrollView.FOCUS_UP);
