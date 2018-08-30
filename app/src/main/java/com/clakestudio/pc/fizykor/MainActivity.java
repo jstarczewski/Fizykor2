@@ -635,7 +635,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fillWebViews(generateEquationsInHtmlStrings(rawEquations));
             materialDesignFAM.setVisibility(View.VISIBLE);
 
-/*
+
         } else if (id == R.id.mechaniczne) {
 
             scrollView.fullScroll(ScrollView.FOCUS_UP);
@@ -644,153 +644,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             sprawdzenieMat = 8;
             sprawdzenie = 8;
 
-
-            card1.setVisibility(View.VISIBLE);
-            card2.setVisibility(View.VISIBLE);
-            card3.setVisibility(View.VISIBLE);
-            card4.setVisibility(View.VISIBLE);
-            card5.setVisibility(View.VISIBLE);
-            card6.setVisibility(View.VISIBLE);
-            card7.setVisibility(View.VISIBLE);
-            card8.setVisibility(View.VISIBLE);
-            card9.setVisibility(View.VISIBLE);
-            card10.setVisibility(View.VISIBLE);
-            card11.setVisibility(View.GONE);
-            card12.setVisibility(View.GONE);
-            card13.setVisibility(View.GONE);
-            card14.setVisibility(View.GONE);
-            card15.setVisibility(View.GONE);
-            card16.setVisibility(View.GONE);
-
-            textView11.setVisibility(View.VISIBLE);
-            textView12.setVisibility(View.VISIBLE);
-            textView13.setVisibility(View.VISIBLE);
-            textView14.setVisibility(View.VISIBLE);
-            textView15.setVisibility(View.VISIBLE);
-            textView16.setVisibility(View.VISIBLE);
-            textView17.setVisibility(View.VISIBLE);
-            textView18.setVisibility(View.VISIBLE);
-            textView19.setVisibility(View.VISIBLE);
-            textView20.setVisibility(View.VISIBLE);
-            textView21.setVisibility(GONE);
-            textView22.setVisibility(GONE);
-            textView23.setVisibility(GONE);
-            textView24.setVisibility(GONE);
-            textView25.setVisibility(GONE);
-            textView26.setVisibility(GONE);
-
-
-            webView1.setVisibility(View.VISIBLE);
-            webView2.setVisibility(View.VISIBLE);
-            webView3.setVisibility(View.VISIBLE);
-            webView4.setVisibility(View.VISIBLE);
-            webView5.setVisibility(View.VISIBLE);
-            webView6.setVisibility(View.VISIBLE);
-            webView7.setVisibility(View.VISIBLE);
-            webView8.setVisibility(View.VISIBLE);
-            webView9.setVisibility(View.VISIBLE);
-            webView10.setVisibility(View.VISIBLE);
-            webView11.setVisibility(GONE);
-            webView12.setVisibility(GONE);
-            webView13.setVisibility(GONE);
-            webView14.setVisibility(GONE);
-            webView15.setVisibility(GONE);
-            webView16.setVisibility(GONE);
-
-
-            textView11.setText(R.string.pr_dko_fali);
-            textView12.setText(R.string.r_wnanie_fali);
-            textView13.setText(R.string.interferencja_fali);
-            textView14.setText(R.string.wypadkowa_amplituda_fali);
-            textView15.setText(R.string.maksymalne_wzmocnienie_fali);
-            textView16.setText(R.string.maksymalne_wygaszenie_fali);
-            textView17.setText(R.string.nat_enie_fal_i);
-            textView18.setText(R.string.zjawisko_dopplera);
-            textView19.setText(R.string.piszcza_ka_otwarta);
-            textView20.setText(R.string.piszcza_ka_otwarta);
-
-
-            String path = "file:///android_asset/";
-            String predkoscFali = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$v↖{→}=λ/T=λf$, $[m/s]$ <br> $v↖{→}$ prędkość, $λ$ długość fali, $T$ okres, $f$ czestotliwość';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String polozenieJeden = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$y(x,t)=Asin[ω(t-x/v)+ϕ_o]$ $[m]$ <br> $y(x,t)=Asin(x/λ-t/T)$ $[m]$ <br> $y(x,t)$ położenie punkt w zależnosci od $x$ i $t$, $A$ amplituda, $λ$ długość fali, $T$ okres, $x$ przesuniecie $λ$ długość fali';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String interferencjaJeden = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$y(x,t)=y_1+y_2$, $y(x,t)=A_1sin[2π(t/T_1-x_1/λ_1)]$ + $A_2sin[2π(t/T_2-x_2/λ_2)]$ <br> $y(x,t)=y_1+y_2$, $y(x,t)=2Acos[π({x_2-x_1}/λ)]$ * $sin[2π(t/T-{x_1+x_2}/{2λ})]$ <br> $y(x,t)$ położenie punkt w zależnosci od $x$ i $t$, $y_1$ funkcja opisująca pierwszą falę, $y_2$ funkcja opisująca drugą falę, $A$ amplituda, $T$ okres, $λ$ długość fali, $λ_1$ długość pierwszej fali, $λ_2$ długość drugiej fali, $x_1$ położenie pierwszego punkut, $x_2$ położenie drugiego punktu';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String wypadkowaA = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$A_w=2Acos[π({x_2-x_1}/λ)]$ <br> $A_w$ wypadkowa amplituda, $λ$ długość fali, $λ$ długość fali, $x_1$ położenie pierwszego punkut, $x_2$ położenie drugiego punktu ';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String wygaszenie = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = 'Maksymalne wygaszenie fali wystepuje gdy różnica przebytych dróg jest równa nieparzystej wielokrotnościa połowy długości fali <br>  $Δx=(2n+1)λ/2$';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String wzmocnienie = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = 'Maksymalne wzmocnienie fali występuje gdy różnica przebytych dróg jest równa całkowitej wielokrotności długości fali <br> $Δx=nλ$';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-            String natezenie = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$I=E/{st}$ $[J/{m^2*s}=W/m^2]$ <br> $I$ natężenie, $E$ energia, $s$ sfera(powierzchnia), $t$ czas <br> Próg słyszalności $I_0=10^{-12}$ $[W/m^2]$ <br> Czlowiek słyszy dźwieki czyli fale akustyczne z zakresu częstotliwości od $16{Hz}$ do $20 000{Hz}$ <br> Poziom natężenia dźwięku $Λ=10{log}J/J_0 [db]$ ';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String doppler = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$f_k=f_o{{v↖{→}+↙{-}v↖{→}_{odp}}/{v↖{→}+↙{-}v↖{→}_{zr}}}$ <br> $f_k$ czestotliwość koncowa, $f$ czestotliwośc początkowa, $v↖{→}$ prędkość dźwieku, $v_{odb}$ prędkość odbiornika, $v_{zr}$ prędkość źródła, $v↖{→}=340$ $m/s$ ';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String piszczalkiotwarte = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>"
-                    + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$f={nv}/{2L}$ $[1/s=Hz]$ <br> Piszczałki otwarte (od strzałki do strzałki), $f$ częstotliwość, $n$ liczba naturalna, $v$ prędkość dźwieku, $L$ długość piszczałki';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            String pisczalkiZamkniete = "<html><head>"
-                    + "<link rel='stylesheet' href='" + path + "jqmath-0.4.3.css'>" + "<script src='" + path + "jquery-1.4.3.min.js'></script>"
-                    + "<script src='" + path + "jqmath-etc-0.4.5.min.js'></script>"
-                    + "</head><body>"
-                    + "<script>var s = '$f=(2n-1)v/{4L}$ $[1/s=Hz]$ <br> Piszczałka zamknięta (od strzałki do węzła), $f$ częstotliwość, $n$ liczba naturalna, $v$ prędkość dźwieku, $L$ długość piszczałki ';M.parseMath(s);document.body.style.fontSize = \"13pt\";document.body.style.color = \"black\";document.body.style.backgroundColor = \"white\";document.body.style.textAlign = \"center\";document.write(s);</script></body>";
-
-            webView1.loadDataWithBaseURL("file:///android_asset/", predkoscFali, "text/html", "UTF-8", null);
-            webView2.loadDataWithBaseURL("file:///android_asset/", polozenieJeden, "text/html", "UTF-8", null);
-            webView3.loadDataWithBaseURL("file:///android_asset/", interferencjaJeden, "text/html", "UTF-8", null);
-            webView4.loadDataWithBaseURL("file:///android_asset/", wypadkowaA, "text/html", "UTF-8", null);
-            webView5.loadDataWithBaseURL("file:///android_asset/", wzmocnienie, "text/html", "UTF-8", null);
-            webView6.loadDataWithBaseURL("file:///android_asset/", wygaszenie, "text/html", "UTF-8", null);
-            webView7.loadDataWithBaseURL("file:///android_asset/", natezenie, "text/html", "UTF-8", null);
-            webView8.loadDataWithBaseURL("file:///android_asset/", doppler, "text/html", "UTF-8", null);
-            webView9.loadDataWithBaseURL("file:///android_asset/", piszczalkiotwarte, "text/html", "UTF-8", null);
-            webView10.loadDataWithBaseURL("file:///android_asset/", pisczalkiZamkniete, "text/html", "UTF-8", null);
-
+            int[] titles = {R.string.pr_dko_fali, R.string.r_wnanie_fali, R.string.interferencja_fali, R.string.wypadkowa_amplituda_fali, R.string.maksymalne_wzmocnienie_fali, R.string.maksymalne_wygaszenie_fali,
+                    R.string.nat_enie_fal_i, R.string.zjawisko_dopplera, R.string.piszcza_ka_otwarta, R.string.piszcza_ka_zamkni_ta
+            };
+            fillTextViews(titles);
+            ArrayList<String> rawEquations = new ArrayList<>();
+            rawEquations.add(getString(R.string.predkosc_fali));
+            rawEquations.add(getString(R.string.rownanie_fali));
+            rawEquations.add(getString(R.string.e_interferencja_fali));
+            rawEquations.add(getString(R.string.e_wypadkowa_amplituda_fali));
+            rawEquations.add(getString(R.string.e_maksymalne_wygaszenie_fali));
+            rawEquations.add(getString(R.string.e_maksymalne_wzmocnienie_fali));
+            rawEquations.add(getString(R.string.e_natezenie_fali));
+            rawEquations.add(getString(R.string.e_zjawisko_dopplera));
+            rawEquations.add(getString(R.string.e_piszczałka_zamknięta));
+            rawEquations.add(getString(R.string.e_piszczalka_zamknieta));
+            fillWebViews(generateEquationsInHtmlStrings(rawEquations));
             materialDesignFAM.setVisibility(View.VISIBLE);
-            menu.setTitle(R.string.fale_mechaniczne);
-
+/*
         } else if (id == R.id.Elektorstatyka) {
 
             scrollView.fullScroll(ScrollView.FOCUS_UP);

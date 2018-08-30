@@ -1,0 +1,13 @@
+Prędkość fali @ '$v↖{→}=λ/T=λf$'
+Rówanie fali y(x,t) z wykorzystaniem prędkości kątowej @ '$y(x,t)=Asin[ω(t-x/v)+ϕ_o]$'
+Rówanie fali y(x,t) z wykorzystaniem długości fali @ '$y(x,t)=Asin(x/λ-t/T)$'
+Interferencja fali zapisana przez iloczyn @ ' $y(x,t)=y_1+y_2=2Acos[π({x_2-x_1}/λ)]sin[2π(t/T-{x_1+x_2}/{2λ})]$'
+Wypadkowa amplituda dwóch fal @ '$A_w=2Acos[π({x_2-x_1}/λ)]$'
+Maksymalne wzmocnienie fali @ '$Δx=nλ$'
+Maksymalne wygaszenie fali @ '$Δx=(2n+1)λ/2$'
+Natężenie fali @ '$I=E/{st}$'
+Natezenie fali dźwiękowej [db] @ '$Λ=10logJ/J_0$'
+Zjawisko Dopplera @ '$f_k=f_o{{v↖{→}+↙{-}v↖{→}_{odp}}/{v↖{→}+↙{-}v↖{→}_{zr}}}$'
+Piszczałka otwarta @ '$f={nv↖{→}}/{2L}$'
+Piszczałka zamknięta @ '$f=(2n-1)v/{4L}$'
+
