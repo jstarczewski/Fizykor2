@@ -1,8 +1,10 @@
 # Fizykor2
 
-Fizykor is currently down, because of GDPR and not submitted privacy policy, probably Fizykor is goint to be republished in the end of 2018, compleatly rebuild.
+Fizykor is currently down, because of GDPR and not submitted privacy policy, probably Fizykor is going to be republished in the end of 2018, compleatly rebuild.
 
 Fizykor - wzory i fiszki maturalne z fizyki
+
+
 Fizykor - physical equations and physical flashcards 
 ## About Fizykor
 Fizykor is my first application published on Google Play Store. This project was created back in 2016 with little or no knowledge about Object-Oriented and Android Application Design principals. It was really a brilliant experience for teenager to create and deploy an app that had impact on real life.

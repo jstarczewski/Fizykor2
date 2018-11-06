@@ -1,4 +1,7 @@
 # Fizykor2
+
+Fizykor is currently down, because of GDPR and not submitted privacy policy, probably Fizykor is goint to be republished in the end of 2018, compleatly rebuild.
+
 Fizykor - wzory i fiszki maturalne z fizyki
 Fizykor - physical equations and physical flashcards 
 ## About Fizykor
